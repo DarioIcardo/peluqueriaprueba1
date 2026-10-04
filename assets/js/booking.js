@@ -922,8 +922,6 @@ window.completeBookingModal = async function() {
 
   const businessId = business ? business.id : 'a0000000-0000-0000-0000-000000000001';
   const bookingCode = generateUniqueBookingCode(); // Genera código único formato ARX-YYYY-XXXX
-  const startsAtIso = formatTimestamptz(selectedDateIso, selectedTimeStart);
-  const endsAtIso = formatTimestamptz(selectedDateIso, selectedTimeEnd);
 
   // Activar estado de procesamiento (deshabilitar botón)
   window.bookingState.isSubmitting = true;
@@ -940,10 +938,10 @@ window.completeBookingModal = async function() {
     `;
   }
 
+  // Payload limpio conteniendo ÚNICAMENTE las columnas reales existentes en la tabla appointments
   const payload = {
     business_id: businessId,
     worker_id: targetWorkerId,
-    service_id: selectedService.id,
     appointment_code: bookingCode,
     customer_name: clientName,
     customer_phone: clientPhone,
@@ -952,9 +950,7 @@ window.completeBookingModal = async function() {
     start_time: selectedTimeStart,
     end_time: selectedTimeEnd,
     total_price: selectedService.rawPrice || parseFloat(selectedService.price) || 15.00,
-    status: 'confirmed',
-    starts_at: startsAtIso,
-    ends_at: endsAtIso
+    status: 'confirmed'
   };
 
   // Copia completa de datos de la cita para inyectar en el modal de confirmación
