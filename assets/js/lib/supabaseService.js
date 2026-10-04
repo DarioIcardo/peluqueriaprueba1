@@ -242,7 +242,7 @@ export async function getScheduleExceptions(businessId, workerId) {
 export async function getAppointments(businessId, filters = {}) {
   const client = getSupabaseClient();
   if (!client) {
-    return { data: null, error: new Error('Supabase client not initialized') };
+    return { data: [], error: null };
   }
 
   try {
@@ -268,11 +268,14 @@ export async function getAppointments(businessId, filters = {}) {
     if (filters.status) {
       query = query.eq('status', filters.status);
     }
+    if (filters.excludeCancelled) {
+      query = query.neq('status', 'cancelled');
+    }
 
     const { data, error } = await query;
-    return { data, error };
+    return { data: data || [], error };
   } catch (err) {
-    return { data: null, error: err };
+    return { data: [], error: err };
   }
 }
 
@@ -344,12 +347,14 @@ export async function updateAppointmentStatus(appointmentId, status) {
 
 /**
  * Convierte una cadena de hora "HH:MM" o "HH:MM:SS" a minutos desde la medianoche.
+ * Normaliza y descarta los segundos ("10:00:00" -> "10:00") para prevenir fallos de comparación.
  * @param {string} timeStr 
  * @returns {number}
  */
 function parseTimeToMinutes(timeStr) {
   if (!timeStr) return 0;
-  const parts = timeStr.split(':').map(Number);
+  const cleanTime = String(timeStr).trim().slice(0, 5);
+  const parts = cleanTime.split(':').map(Number);
   return (parts[0] || 0) * 60 + (parts[1] || 0);
 }
 
@@ -476,11 +481,27 @@ export async function getAvailableTimeSlots({ businessId, workerId, serviceId, d
     return [];
   }
 
-  // 6. Consultar citas existentes del día (solo confirmadas o completadas)
-  const appointmentsRes = await getAppointments(resolvedBusinessId, { date });
-  const allAppointments = (appointmentsRes.data || []).filter(app => 
-    app.status === 'confirmed' || app.status === 'completed'
-  );
+  // 6. Consultar citas existentes del día filtrando status != 'cancelled'
+  const appointmentsRes = await getAppointments(resolvedBusinessId, { date, excludeCancelled: true });
+  const existingAppointments = (appointmentsRes.data || []).filter(app => app.status !== 'cancelled');
+
+  // IMPRESCINDIBLE: Imprimir en consola las citas recibidas
+  console.log('Citas existentes:', existingAppointments);
+
+  // Normalizar horas cortando los segundos "HH:mm:ss" -> "HH:mm" para comparaciones exactas
+  const normalizedAppointments = existingAppointments.map(app => {
+    const cleanStart = app.start_time ? String(app.start_time).trim().slice(0, 5) : '';
+    const cleanEnd = app.end_time ? String(app.end_time).trim().slice(0, 5) : '';
+    const apptStartMins = parseTimeToMinutes(cleanStart);
+    const apptEndMins = parseTimeToMinutes(cleanEnd);
+    return {
+      ...app,
+      start_time_clean: cleanStart,
+      end_time_clean: cleanEnd,
+      start_mins: apptStartMins,
+      end_mins: apptEndMins
+    };
+  });
 
   // 7. Consultar horarios generales del negocio y horarios de trabajadores
   const [bizSchedulesRes, workerSchedulesRes] = await Promise.all([
@@ -552,7 +573,7 @@ export async function getAvailableTimeSlots({ businessId, workerId, serviceId, d
     }
 
     // Citas existentes para este trabajador en el día
-    const workerAppointments = allAppointments.filter(app => app.worker_id === worker.id);
+    const workerAppointments = normalizedAppointments.filter(app => app.worker_id === worker.id);
 
     // Definir los turnos activos
     const shifts = [];
@@ -577,15 +598,15 @@ export async function getAvailableTimeSlots({ businessId, workerId, serviceId, d
 
       while (slotStartMins + durationMinutes <= shift.endMins) {
         const slotEndMins = slotStartMins + durationMinutes;
-        const timeKey = formatMinutesToLabel(slotStartMins);
+        const timeKey = formatMinutesToLabel(slotStartMins); // Formato "HH:mm"
         const startTimeFormatted = formatMinutesToTime(slotStartMins);
         const endTimeFormatted = formatMinutesToTime(slotEndMins);
 
-        // Comprobar solapamiento con citas existentes
+        // Comprobar solapamiento o coincidencia exacta de hora de inicio "HH:mm"
         const hasOverlap = workerAppointments.some(app => {
-          const apptStartMins = parseTimeToMinutes(app.start_time);
-          const apptEndMins = parseTimeToMinutes(app.end_time);
-          return (slotStartMins < apptEndMins) && (slotEndMins > apptStartMins);
+          const matchesExactStart = app.start_time_clean && app.start_time_clean === timeKey;
+          const isIntervalOverlap = (slotStartMins < app.end_mins) && (slotEndMins > app.start_mins);
+          return matchesExactStart || isIntervalOverlap;
         });
 
         // Comprobar si el hueco está en el pasado o dentro del margen mínimo de antelación
