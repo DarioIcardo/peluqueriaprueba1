@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="web_standard" name="shell-type"/>
+  <title>Peluquería Arxemil · Urban Precision · Lugo</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/main.css"/>
+
+  <!-- Tailwind CSS CDN + Theme Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#0f131c",
+            "surface-dim": "#0f131c",
+            "surface-bright": "#353943",
+            "surface-container-lowest": "#0a0e17",
+            "surface-container-low": "#181b25",
+            "surface-container": "#1c1f29",
+            "surface-container-high": "#262a34",
+            "surface-container-highest": "#31353f",
+            "surface-variant": "#31353f",
+            "on-surface": "#dfe2ef",
+            "on-surface-variant": "#d1c6ab",
+            "inverse-surface": "#dfe2ef",
+            "inverse-on-surface": "#2c303a",
+            "outline": "#9a9078",
+            "outline-variant": "#4d4632",
+            "surface-tint": "#eec200",
+            "primary": "#ffecb9",
+            "on-primary": "#3c2f00",
+            "primary-container": "#facc15",
+            "on-primary-container": "#6c5700",
+            "inverse-primary": "#735c00",
+            "secondary": "#ffb95f",
+            "on-secondary": "#472a00",
+            "secondary-container": "#ee9800",
+            "on-secondary-container": "#5b3800",
+            "tertiary": "#dbf0ff",
+            "on-tertiary": "#00354a",
+            "tertiary-container": "#99d9ff",
+            "on-tertiary-container": "#006083",
+            "error": "#ffb4ab",
+            "on-error": "#690005",
+            "error-container": "#93000a",
+            "on-error-container": "#ffdad6",
+            "primary-fixed": "#ffe083",
+            "primary-fixed-dim": "#eec200",
+            "on-primary-fixed": "#231b00",
+            "on-primary-fixed-variant": "#574500",
+            "secondary-fixed": "#ffddb8",
+            "secondary-fixed-dim": "#ffb95f",
+            "on-secondary-fixed": "#2a1700",
+            "on-secondary-fixed-variant": "#653e00",
+            "tertiary-fixed": "#c4e7ff",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "on-tertiary-fixed": "#001e2c",
+            "on-tertiary-fixed-variant": "#004c69",
+            "background": "#0f131c",
+            "on-background": "#dfe2ef"
+          },
+          borderRadius: {
+            "sm": "0.25rem",
+            "DEFAULT": "0.5rem",
+            "md": "0.75rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "gutter": "1rem",
+            "gutter-desktop": "1.5rem",
+            "margin": "1rem",
+            "margin-desktop": "2rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem"
+          },
+          fontFamily: {
+            "display": ["Syne", "sans-serif"],
+            "headline-xl": ["Syne", "sans-serif"],
+            "headline-lg": ["Syne", "sans-serif"],
+            "headline-md": ["Syne", "sans-serif"],
+            "headline-sm": ["Syne", "sans-serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "label-lg": ["Space Grotesk", "sans-serif"],
+            "label-md": ["Space Grotesk", "sans-serif"],
+            "label-sm": ["Space Grotesk", "sans-serif"]
+          },
+          fontSize: {
+            "display": ["56px", { lineHeight: "64px", letterSpacing: "-0.03em", fontWeight: "800" }],
+            "display-mobile": ["38px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "800" }],
+            "headline-xl": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-xl-mobile": ["30px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "headline-lg-mobile": ["24px", { lineHeight: "30px", letterSpacing: "0em", fontWeight: "700" }],
+            "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+            "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["15px", { lineHeight: "22px", fontWeight: "400" }],
+            "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "label-lg": ["14px", { lineHeight: "18px", letterSpacing: "0.04em", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.06em", fontWeight: "600" }],
+            "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.08em", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-background font-body-md text-body-md text-on-background selection:bg-primary-container selection:text-on-primary-container antialiased min-h-screen">
+  
+  <!-- ============================================== -->
+  <!-- HEADER / NAVEGACIÓN PRINCIPAL -->
+  <!-- ============================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_1px_12px_rgba(0,0,0,0.4)]">
+    <div class="h-20 w-full px-margin md:px-margin-desktop flex items-center justify-between gap-space-md">
+      
+      <!-- Brand Logo & Slogan -->
+      <div class="flex items-center gap-space-md">
+        <a class="flex items-center gap-space-sm group" href="index.html">
+          <img alt="Peluquería Arxemil Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W31D7vtAoQVq_o2NvlLraVXD9Kd68CmehJ_prHpwPWeEt8pVoklbGdvZiZg01ZHUARSh0Uej4lymP4NqzgDYZGt3jMIWlmRDTQyqMQh8qp2rlXhr5GYnzSlk5DRnv7xfInHejfGFnex_II1R6B1SDzeglp5YmcbwLaey-DJNANjYJIAwbfjG0ZtBB8kdQzPxKqzi6ejvP67dS1773yygPHJSYx4ePcHaaEjpGl4Nq0R4zhS23qLx-VVq8"/>
+          <div class="flex flex-col">
+            <span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none group-hover:text-primary transition-colors">Peluquería Arxemil</span>
+            <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest leading-none mt-1">Ronda de las Murallas · Lugo</span>
+          </div>
+        </a>
+        
+        <!-- Address & Quick Call Badge -->
+        <div class="hidden xl:flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+          <span class="material-symbols-outlined text-base text-primary-container">pin_drop</span>
+          <span>Ronda de las Murallas, Lugo</span>
+          <span class="text-outline-variant mx-1">•</span>
+          <span class="material-symbols-outlined text-base text-primary-container">call</span>
+          <span class="text-on-surface">666 666 666</span>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-space-sm font-label-md text-label-md">
+        <a aria-current="page" class="px-space-md py-2 transition-colors bg-surface-container-high text-primary-container rounded-lg font-bold" href="index.html">Inicio</a>
+        <a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" href="#servicios-catalogo">Servicios</a>
+        <a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" href="#equipo-seccion">Equipo</a>
+        <a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" href="#contacto-ubicacion">Ubicación</a>
+        <a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" href="reservar.html">Reservar Cita</a>
+        <a class="px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" href="admin.html">Acceso Administración</a>
+      </nav>
+
+      <!-- Action Buttons & Mobile Hamburger -->
+      <div class="flex items-center gap-space-sm sm:gap-space-md">
+        <a class="inline-flex items-center justify-center px-3.5 sm:px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md uppercase tracking-wider transition-all duration-200 hover:brightness-105 active:scale-95 shadow-[0_0_20px_-4px_rgba(250,204,21,0.25)] font-bold text-xs sm:text-sm" href="reservar.html">
+          Reservar Cita
+        </a>
+        
+        <a class="hidden sm:inline-flex p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" href="admin.html" title="Acceso Administración / Backoffice">
+          <span class="material-symbols-outlined text-xl">admin_panel_settings</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-colors" aria-label="Abrir menú de navegación">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop & Menu -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-background/80 backdrop-blur-md z-50 hidden transition-opacity">
+    <div id="mobile-menu-drawer" class="fixed right-0 top-0 bottom-0 w-4/5 max-w-sm bg-surface-container-lowest border-l border-surface-container p-space-lg flex flex-col justify-between transform translate-x-full transition-transform duration-300 shadow-2xl">
+      <div class="flex flex-col gap-space-lg">
+        <div class="flex items-center justify-between pb-space-md border-b border-surface-container">
+          <div class="flex items-center gap-2">
+            <img alt="Peluquería Arxemil Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W31D7vtAoQVq_o2NvlLraVXD9Kd68CmehJ_prHpwPWeEt8pVoklbGdvZiZg01ZHUARSh0Uej4lymP4NqzgDYZGt3jMIWlmRDTQyqMQh8qp2rlXhr5GYnzSlk5DRnv7xfInHejfGFnex_II1R6B1SDzeglp5YmcbwLaey-DJNANjYJIAwbfjG0ZtBB8kdQzPxKqzi6ejvP67dS1773yygPHJSYx4ePcHaaEjpGl4Nq0R4zhS23qLx-VVq8"/>
+            <span class="font-headline-sm text-headline-sm text-on-surface">Arxemil</span>
+          </div>
+          <button id="mobile-menu-close-btn" class="p-2 rounded-lg bg-surface-container text-on-surface hover:text-primary">
+            <span class="material-symbols-outlined text-xl">close</span>
+          </button>
+        </div>
+
+        <nav class="flex flex-col gap-2 font-label-md text-label-md">
+          <a class="mobile-nav-link flex items-center gap-3 px-space-md py-3 rounded-xl bg-surface-container-high text-primary-container font-bold" href="index.html">
+            <span class="material-symbols-outlined text-lg">home</span>
+            <span>Inicio</span>
+          </a>
+          <a class="mobile-nav-link flex items-center gap-3 px-space-md py-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="#servicios-catalogo">
+            <span class="material-symbols-outlined text-lg">content_cut</span>
+            <span>Carta de Servicios</span>
+          </a>
+          <a class="mobile-nav-link flex items-center gap-3 px-space-md py-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="#equipo-seccion">
+            <span class="material-symbols-outlined text-lg">badge</span>
+            <span>Equipo & Barbers</span>
+          </a>
+          <a class="mobile-nav-link flex items-center gap-3 px-space-md py-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="#contacto-ubicacion">
+            <span class="material-symbols-outlined text-lg">location_on</span>
+            <span>Ubicación y Horarios</span>
+          </a>
+          <a class="mobile-nav-link flex items-center gap-3 px-space-md py-3 rounded-xl text-primary-container bg-surface-container font-bold" href="reservar.html">
+            <span class="material-symbols-outlined text-lg">calendar_month</span>
+            <span>Reservar Cita Online</span>
+          </a>
+          <a class="mobile-nav-link flex items-center gap-3 px-space-md py-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="admin.html">
+            <span class="material-symbols-outlined text-lg">admin_panel_settings</span>
+            <span>Acceso Administración</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="flex flex-col gap-2 pt-space-md border-t border-surface-container text-body-sm text-on-surface-variant">
+        <p class="font-bold text-on-surface">Peluquería Arxemil Lugo</p>
+        <p>Ronda de las Murallas · Tel: 666 666 666</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- CONTENIDO PRINCIPAL -->
+  <!-- ============================================== -->
+  <main class="w-full pt-20 bg-background min-h-screen">
+    <div class="flex flex-col w-full">
+      
+      <!-- HERO SECTION WITH DYNAMIC URBAN BACKDROP -->
+      <section class="relative w-full overflow-hidden bg-surface-container-lowest -mt-20 pt-28 pb-16 md:pb-24 lg:pb-32">
+        <!-- Atmospheric Ambient Glows -->
+        <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 -right-40 w-[500px] h-[500px] rounded-full bg-secondary-container/10 blur-[120px] pointer-events-none"></div>
+        
+        <div class="w-full px-margin md:px-margin-desktop max-w-7xl mx-auto flex flex-col gap-space-xl relative z-10">
+          <!-- Overline Pill Badge -->
+          <div class="flex items-center">
+            <div class="inline-flex items-center gap-space-xs px-4 py-1.5 rounded-full bg-surface-container-high shadow-sm backdrop-blur-md">
+              <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+              <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">3 Años Marcando Tendencia en Ronda de las Murallas</span>
+            </div>
+          </div>
+
+          <!-- Main Headline + Asymmetric Layout -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-end">
+            <div class="lg:col-span-8 flex flex-col gap-space-md">
+              <h1 class="font-display text-4xl sm:text-5xl lg:text-display leading-[1.08] text-on-surface uppercase tracking-tight">
+                Estilo urbano, <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container via-primary to-secondary">precisión &amp; carácter</span> <br/>
+                en el corazón de Lugo.
+              </h1>
+              <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-2">
+                Cortes actuales, perfilado de barba al milímetro y cuidado masculino sin esperas innecesarias ni complicaciones. La vanguardia de la barbería bajo la sombra de la muralla romana.
+              </p>
+
+              <!-- CTAs -->
+              <div class="flex flex-wrap items-center gap-space-md pt-4">
+                <a class="inline-flex items-center justify-center gap-2 px-space-lg py-4 rounded-xl bg-primary-container text-on-primary-container font-label-lg text-label-lg uppercase tracking-wider transition-all duration-300 hover:brightness-110 hover:shadow-[0_0_30px_rgba(250,204,21,0.35)] active:scale-95 group font-bold" href="reservar.html">
+                  <span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-0.5">calendar_month</span>
+                  <span>Reservar Cita Ahora</span>
+                </a>
+                <a class="inline-flex items-center justify-center gap-2 px-space-lg py-4 rounded-xl bg-surface-container text-on-surface font-label-lg text-label-lg uppercase tracking-wider transition-all duration-200 hover:bg-surface-container-high hover:text-primary font-bold" href="#servicios-catalogo">
+                  <span class="material-symbols-outlined text-xl">content_cut</span>
+                  <span>Ver Catálogo y Precios</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Visual Anchor: High-End Photographic Showcase -->
+            <div class="lg:col-span-4 flex flex-col gap-space-md">
+              <div class="relative rounded-2xl overflow-hidden shadow-xl bg-surface-container-high group aspect-[4/5] w-full">
+                <img class="w-full h-full object-cover grayscale contrast-125 transition-transform duration-700 group-hover:scale-105 group-hover:grayscale-0" alt="Corte técnico moderno en Peluquería Arxemil Lugo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2qmviHj9g-p6VarMerYUpIFtV1pS7TKwGIqBW_DVf26h6XiCQ9dw9O-f4fZMKl_6oyDWjO1MBtlQQ3L2sVfbW5wAqmIUYtrJpEdvGsIR6v5taBYA_5fRhKbDrw7S17PTciLAgP0hJ0lQGKHXptys3VNIdli7RfhR9jjZ5oS-8s0sOkrOqRHsDKjVWEeMoUHXeGR2N3dflrK3OPyrafw9Uk3YWYOYLpE5EwKxhTHCqYBP0B48Wrwc2xQ"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-surface-container-low/90 backdrop-blur-md flex items-center justify-between">
+                  <div>
+                    <p class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Sede Principal</p>
+                    <p class="font-headline-sm text-headline-sm text-on-surface">Ronda Murallas · Lugo</p>
+                  </div>
+                  <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary-container">
+                    <span class="material-symbols-outlined">pin_drop</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Social Proof KPI Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-gutter-desktop pt-4">
+            <!-- Stat 1 -->
+            <div class="p-6 rounded-2xl bg-surface-container-low shadow-sm flex flex-col gap-1 transition-all duration-300 hover:bg-surface-container">
+              <div class="flex items-center gap-2 text-primary-container">
+                <div class="flex items-center">
+                  <span class="material-symbols-outlined text-lg fill-active">star</span>
+                  <span class="material-symbols-outlined text-lg fill-active">star</span>
+                  <span class="material-symbols-outlined text-lg fill-active">star</span>
+                  <span class="material-symbols-outlined text-lg fill-active">star</span>
+                  <span class="material-symbols-outlined text-lg fill-active">star</span>
+                </div>
+                <span class="font-label-md text-label-md text-primary font-bold">4.9 / 5.0</span>
+              </div>
+              <span class="font-headline-lg text-headline-lg text-on-surface font-display mt-1">4.9 ★ Reseñas</span>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Valoración verificada en Google Maps por clientes locales de Lugo.</p>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="p-6 rounded-2xl bg-surface-container-low shadow-sm flex flex-col gap-1 transition-all duration-300 hover:bg-surface-container">
+              <div class="flex items-center gap-2 text-primary">
+                <span class="material-symbols-outlined text-xl">workspace_premium</span>
+                <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Fidelidad Comprobada</span>
+              </div>
+              <span class="font-headline-lg text-headline-lg text-on-surface font-display mt-1">+3.500</span>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Cortes y arreglos realizados a clientes satisfechos en 3 años.</p>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="p-6 rounded-2xl bg-surface-container-low shadow-sm flex flex-col gap-1 transition-all duration-300 hover:bg-surface-container">
+              <div class="flex items-center gap-2 text-primary-container">
+                <span class="material-symbols-outlined text-xl">bolt</span>
+                <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Sin Colas</span>
+              </div>
+              <span class="font-headline-lg text-headline-lg text-on-surface font-display mt-1">100% Online</span>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Reserva ágil en 30 segundos con confirmación inmediata.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BANNER TRANSPARENTE: POLÍTICA SIN PAGOS ADELANTADOS -->
+      <section class="w-full bg-surface-container py-5 border-y border-surface-container-high/40">
+        <div class="w-full px-margin md:px-margin-desktop max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-xl">payments</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-wide">Sin pagos por adelantado ni comisiones ocultas</span>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Pagas directamente en el local tras tu servicio (efectivo, Bizum o tarjeta). Citas seguidas y sin tiempos muertos.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 text-primary font-label-sm text-label-sm uppercase tracking-widest shrink-0">
+            <span class="w-2 h-2 rounded-full bg-primary-container"></span>
+            <span>Máxima Flexibilidad y Confianza</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN HISTORIA Y CONCEPTO: URBAN PRECISION & ROOTS -->
+      <section class="w-full py-20 lg:py-28 bg-background relative overflow-hidden">
+        <div class="w-full px-margin md:px-margin-desktop max-w-7xl mx-auto flex flex-col gap-space-xl">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
+            
+            <!-- Visual Composition Collage -->
+            <div class="lg:col-span-6 relative flex flex-col gap-4">
+              <div class="relative rounded-2xl overflow-hidden shadow-xl bg-surface-container aspect-[16/10] w-full">
+                <img class="w-full h-full object-cover" alt="Fundadores y Barberos de Peluquería Arxemil Lugo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKJ3_-5_SMIbx-YQ9CnVZtoih2k_182mDg0D51GFJ1Y16ChjNcxpjZ07o7Ljw-9gBziwMIkrUqHSWbpU7aRY-VvHDkgAa_GsaO1pk4WrWXOk9HmEnoCVjTv0kp2GWDNY-3ZoJYEBA4k8fhkYSZwlMfTDr08T3oDjawm0Cfqw8qkvWRuHNwPWt96f__ogCHw7o9OjhyIdtjgZd_sktd9hxgUhSgWbu5EklR2VDr7TWYAuQvpk4bgF3IuQ"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"></div>
+                <div class="absolute top-4 left-4 px-3 py-1.5 rounded-lg bg-surface-container-lowest/80 backdrop-blur-md">
+                  <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Est. 2022 · Ronda de las Murallas</span>
+                </div>
+              </div>
+
+              <!-- Asymmetric Overlapping Card -->
+              <div class="p-6 rounded-2xl bg-surface-container-high shadow-xl -mt-8 md:-mt-12 ml-6 md:ml-12 max-w-md relative z-10 flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-2xl">architecture</span>
+                </div>
+                <div>
+                  <p class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Arquitectura y Estilo</p>
+                  <p class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Técnica al milímetro</p>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">Cada degradado se calcula según la morfología craneal y facial.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Narrative Content -->
+            <div class="lg:col-span-6 flex flex-col gap-space-md lg:pl-6">
+              <div class="inline-flex items-center gap-2">
+                <span class="w-6 h-0.5 bg-primary-container"></span>
+                <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Nuestra Historia</span>
+              </div>
+              <h2 class="font-headline-xl text-3xl sm:text-headline-xl text-on-surface">
+                Fundada hace 3 años por dos apasionados del corte de vanguardia.
+              </h2>
+              <div class="flex flex-col gap-3 font-body-md text-body-md text-on-surface-variant">
+                <p>
+                  Peluquería Arxemil nació de una visión clara: romper con la barbería tradicional estática y traer a Lugo un espacio de alto calibre, donde la cultura urbana, la precisión técnica y la comodidad convergen a pie de la histórica muralla romana.
+                </p>
+                <p>
+                  Dos emprendedores decidieron transformar su pasión en un estudio donde el cliente no solo viene a cortarse el pelo, sino a definir su identidad. Aquí la música acompaña el ritmo de la máquina, los productos son de formulación prémium y cada profesional dedica el tiempo justo para un acabado impecable.
+                </p>
+              </div>
+
+              <!-- Feature Bullet Grid -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-4 rounded-xl bg-surface-container-low flex items-start gap-3">
+                  <span class="material-symbols-outlined text-primary-container mt-0.5">verified</span>
+                  <div>
+                    <h4 class="font-label-md text-label-md text-on-surface font-bold">Ritual Técnico</h4>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">Navaja, vapor caliente y navajín desinfectado individualmente.</p>
+                  </div>
+                </div>
+                <div class="p-4 rounded-xl bg-surface-container-low flex items-start gap-3">
+                  <span class="material-symbols-outlined text-primary-container mt-0.5">schedule</span>
+                  <div>
+                    <h4 class="font-label-md text-label-md text-on-surface font-bold">Puntualidad Absoluta</h4>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">Tu tiempo vale oro. Sin retrasos en tu turno agendado.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CATÁLOGO EXACTO DE SERVICIOS -->
+      <section class="w-full py-20 lg:py-28 bg-surface-container-lowest relative" id="servicios-catalogo">
+        <div class="w-full px-margin md:px-margin-desktop max-w-7xl mx-auto flex flex-col gap-space-xl">
+          
+          <!-- Section Header -->
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+            <div class="flex flex-col gap-space-xs max-w-2xl">
+              <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Precios Transparentes &amp; Sin Sorpresas</span>
+              <h2 class="font-headline-xl text-3xl sm:text-headline-xl text-on-surface">Carta de Servicios</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Protocolos de corte calibrados para máxima duración, nitidez de líneas y textura personalizada. Elige el servicio que mejor se adapte a tu estilo.
+              </p>
+            </div>
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container text-on-surface-variant font-label-md text-label-md">
+              <span class="material-symbols-outlined text-primary-container text-base">info</span>
+              <span>Todos los cortes incluyen lavado previo y styling con cera/polvos mate</span>
+            </div>
+          </div>
+
+          <!-- Service Cards Grid (4 EXACT SERVICES) -->
+          <div id="services-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-desktop">
+            
+            <!-- Servicio 1 -->
+            <div class="group p-6 rounded-2xl bg-surface-container-low flex flex-col justify-between gap-space-md transition-all duration-300 hover:bg-surface-container hover:shadow-xl hover:-translate-y-1">
+              <div class="flex flex-col gap-space-sm">
+                <div class="flex items-center justify-between">
+                  <span class="px-3 py-1 rounded-full bg-surface-container-high text-primary-container font-label-sm text-label-sm flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-xs">timer</span>
+                    <span>45 min</span>
+                  </span>
+                  <span class="font-headline-lg text-headline-lg font-display text-on-surface">15 €</span>
+                </div>
+                <div class="mt-2">
+                  <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Corte de pelo</h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+                    Incluye asesoramiento morfológico completo, técnica de degradado (skin fade, taper o low fade) o corte a tijera clásico, y peinado finish con producto prémium.
+                  </p>
+                </div>
+              </div>
+              <div class="pt-4 flex flex-col gap-2">
+                <div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+                  <span class="material-symbols-outlined text-primary text-base">check_circle</span>
+                  <span>Lavado y masaje capilar</span>
+                </div>
+                <a class="mt-3 w-full py-3 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-wider text-center transition-all duration-200 group-hover:bg-primary-container group-hover:text-on-primary-container font-bold" href="reservar.html?service=corte-de-pelo">
+                  Reservar este servicio
+                </a>
+              </div>
+            </div>
+
+            <!-- Servicio 2 -->
+            <div class="group p-6 rounded-2xl bg-surface-container-low flex flex-col justify-between gap-space-md transition-all duration-300 hover:bg-surface-container hover:shadow-xl hover:-translate-y-1">
+              <div class="flex flex-col gap-space-sm">
+                <div class="flex items-center justify-between">
+                  <span class="px-3 py-1 rounded-full bg-surface-container-high text-primary-container font-label-sm text-label-sm flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-xs">timer</span>
+                    <span>50 min</span>
+                  </span>
+                  <span class="font-headline-lg text-headline-lg font-display text-on-surface">17 €</span>
+                </div>
+                <div class="mt-2">
+                  <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Corte de pelo con cejas</h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+                    Corte completo personalizado más perfilado, despeje del entrecejo y limpieza natural de cejas con navaja para un marco facial limpio y definido.
+                  </p>
+                </div>
+              </div>
+              <div class="pt-4 flex flex-col gap-2">
+                <div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+                  <span class="material-symbols-outlined text-primary text-base">check_circle</span>
+                  <span>Cejas naturales y armoniosas</span>
+                </div>
+                <a class="mt-3 w-full py-3 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-wider text-center transition-all duration-200 group-hover:bg-primary-container group-hover:text-on-primary-container font-bold" href="reservar.html?service=corte-pelo-cejas">
+                  Reservar este servicio
+                </a>
+              </div>
+            </div>
+
+            <!-- Servicio 3 (Featured) -->
+            <div class="relative group p-6 rounded-2xl bg-surface-container flex flex-col justify-between gap-space-md shadow-xl transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-1 border border-primary-container/30">
+              <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold uppercase tracking-wider shadow-sm">
+                Más Popular
+              </div>
+              <div class="flex flex-col gap-space-sm">
+                <div class="flex items-center justify-between">
+                  <span class="px-3 py-1 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-xs">timer</span>
+                    <span>55 min</span>
+                  </span>
+                  <span class="font-headline-lg text-headline-lg font-display text-primary-container">19 €</span>
+                </div>
+                <div class="mt-2">
+                  <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Corte con barba</h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+                    Corte de pelo a medida junto al ritual completo de barba: recorte volumétrico, aplicación de toalla caliente, aceite hidratante y contorneado de precisión.
+                  </p>
+                </div>
+              </div>
+              <div class="pt-4 flex flex-col gap-2">
+                <div class="flex items-center gap-2 text-primary font-body-sm text-body-sm font-medium">
+                  <span class="material-symbols-outlined text-base">spa</span>
+                  <span>Ritual con toalla caliente incluido</span>
+                </div>
+                <a class="mt-3 w-full py-3 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md uppercase tracking-wider text-center font-bold transition-all duration-200 hover:brightness-110 shadow-sm" href="reservar.html?service=corte-con-barba">
+                  Reservar este servicio
+                </a>
+              </div>
+            </div>
+
+            <!-- Servicio 4 (Integral Experience) -->
+            <div class="group p-6 rounded-2xl bg-surface-container-low flex flex-col justify-between gap-space-md transition-all duration-300 hover:bg-surface-container hover:shadow-xl hover:-translate-y-1">
+              <div class="flex flex-col gap-space-sm">
+                <div class="flex items-center justify-between">
+                  <span class="px-3 py-1 rounded-full bg-surface-container-high text-primary-container font-label-sm text-label-sm flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-xs">timer</span>
+                    <span>60 min (1 h)</span>
+                  </span>
+                  <span class="font-headline-lg text-headline-lg font-display text-on-surface">20 €</span>
+                </div>
+                <div class="mt-2">
+                  <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Corte + barba + cejas</h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+                    El servicio definitivo de cuidado integral y máxima definición masculina. Corte pulido, barba esculpida con toalla aromática y cejas perfiladas.
+                  </p>
+                </div>
+              </div>
+              <div class="pt-4 flex flex-col gap-2">
+                <div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+                  <span class="material-symbols-outlined text-primary text-base">verified</span>
+                  <span>Tratamiento total de imagen</span>
+                </div>
+                <a class="mt-3 w-full py-3 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-wider text-center transition-all duration-200 group-hover:bg-primary-container group-hover:text-on-primary-container font-bold" href="reservar.html?service=corte-barba-cejas">
+                  Reservar este servicio
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CONOCE AL EQUIPO SECTION -->
+      <section class="w-full py-20 lg:py-28 bg-background relative" id="equipo-seccion">
+        <div class="w-full px-margin md:px-margin-desktop max-w-7xl mx-auto flex flex-col gap-space-xl">
+          
+          <!-- Section Intro & Quality Badge -->
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+            <div class="flex flex-col gap-space-xs max-w-2xl">
+              <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Master Stylists &amp; Barbers</span>
+              <h2 class="font-headline-xl text-3xl sm:text-headline-xl text-on-surface">Conoce al Equipo</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                3 profesionales expertos preparados para cualquier estilo. Desde fades milimétricos hasta cortes clásicos a tijera y barbas de contorno afilado.
+              </p>
+            </div>
+            <div class="inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-surface-container-high shadow-md">
+              <span class="material-symbols-outlined text-primary-container text-2xl">workspace_premium</span>
+              <div class="flex flex-col">
+                <span class="font-label-sm text-label-sm text-on-surface font-bold uppercase tracking-wider">Garantía de Maestría</span>
+                <span class="font-body-sm text-body-sm text-primary">Los 3 profesionales dominan el 100% de la carta</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Members Grid -->
+          <div id="team-container" class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+            
+            <!-- Barber 1: Darío -->
+            <div class="group rounded-2xl bg-surface-container-low overflow-hidden transition-all duration-300 hover:bg-surface-container hover:shadow-xl">
+              <div class="relative aspect-[3/4] w-full overflow-hidden bg-surface-container">
+                <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Retrato de Darío, Master Barber en Peluquería Arxemil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwkWeWeMa_McmQi396wldm_gSErgjAalWIpwqv-EGRMviHNhT3vO_IM7ZbCIioX8OvdvI51o8wmnZ6AuSqfSP71jO6SnxAN6xDLRdC8nsJqrle1USa-qDEKI0eCp72F2g9Rddhb9AWzwgAXbsC83EMx9Jh44gUFYiI5BAImaAkpNecAK0L2aKabrAgDrWzVNyP5c6h2HkBHN40BeVv-NrWTOqVjChwS5M4xLtsn8dEraSgti5RB0ufag"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+                <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span class="font-label-sm text-label-sm text-on-surface">Disponible hoy</span>
+                </div>
+              </div>
+              <div class="p-6 flex flex-col gap-space-sm">
+                <div>
+                  <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Co-fundador &amp; Master Barber</span>
+                  <h3 class="font-headline-md text-headline-md text-on-surface mt-0.5">Darío</h3>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Especialista en degradados skin fade al milímetro, texturizados modernos, crop cuts y transiciones ultra suaves.
+                </p>
+                <div class="pt-2 flex flex-wrap gap-2">
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm">Skin Fade</span>
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm">Texture Crop</span>
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm">Diseño de Líneas</span>
+                </div>
+                <a class="mt-4 inline-flex items-center justify-center gap-2 py-2.5 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container hover:text-on-primary-container transition-colors font-bold" href="reservar.html?barber=dario">
+                  <span>Elegir a Darío</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Barber 2: Reija -->
+            <div class="group rounded-2xl bg-surface-container-low overflow-hidden transition-all duration-300 hover:bg-surface-container hover:shadow-xl">
+              <div class="relative aspect-[3/4] w-full overflow-hidden bg-surface-container">
+                <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Retrato de Reija, Hair Artist en Peluquería Arxemil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk1VafjCAXTrgAVUvv5RUPMydssGs9K5ktTrUfqdQTfYQP7MrKYm84CnEDRt7ww6A8Orqwarm4JZpD9Nbau3jZ2qwasveQsD-3yybZ-vlda_cqTmNqFwqO_lFg6RMJNLgG6wWlfYoormyPQUyEx0inHR5Y2o58gffu_HoNJmCuO4xh5CvhXqFC8tgNROHTK3dLuEtOvq73NYwaRdTvzJRARFwDdML7iucb-GZ-VuCzfhf9BroZu4QhOQ"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+                <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span class="font-label-sm text-label-sm text-on-surface">Disponible hoy</span>
+                </div>
+              </div>
+              <div class="p-6 flex flex-col gap-space-sm">
+                <div>
+                  <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Co-fundador &amp; Hair Artist</span>
+                  <h3 class="font-headline-md text-headline-md text-on-surface mt-0.5">Reija</h3>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Especialista en técnica clásica de tijera, estilismo personalizado según caída natural del cabello y afeitado tradicional a navaja.
+                </p>
+                <div class="pt-2 flex flex-wrap gap-2">
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm">Corte a Tijera</span>
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm">Navaja Clásica</span>
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm">Styling Editorial</span>
+                </div>
+                <a class="mt-4 inline-flex items-center justify-center gap-2 py-2.5 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container hover:text-on-primary-container transition-colors font-bold" href="reservar.html?barber=reija">
+                  <span>Elegir a Reija</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Barber 3: Iago -->
+            <div class="group rounded-2xl bg-surface-container-low overflow-hidden transition-all duration-300 hover:bg-surface-container hover:shadow-xl">
+              <div class="relative aspect-[3/4] w-full overflow-hidden bg-surface-container">
+                <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Retrato de Iago, Senior Barber en Peluquería Arxemil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj4OI_DAE5VVaWCrIPNZGfqjYIkXLyxw-Mn2tsoyGb8wN0XiM5unemvU1BaeolgqhufqVIrw-laQXXwr3gXZVaLi9HEgRUs_kb_heVpCo_ln4bQCc51lMqvBVzqfCsru95rlxxAxXywV_eCu4O8LsOef52IGc343luz6t7RQMnEW5KwXKRPnqDP0mtMFXPvDZiUFXB_fpQoMNHgjbVKclB3jlZjlHRTaL5M1Yo3UTns1cBR9Nt-39XoA"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+                <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+                  <span class="font-label-sm text-label-sm text-on-surface">Pocas citas hoy</span>
+                </div>
+              </div>
+              <div class="p-6 flex flex-col gap-space-sm">
+                <div>
+                  <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Senior Stylist &amp; Barber</span>
+                  <h3 class="font-headline-md text-headline-md text-on-surface mt-0.5">Iago</h3>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Especialista en escultura y perfilado de barba, arquitectura de líneas urbanas, tapers afilados y tratamientos de acabado capilar.
+                </p>
+                <div class="pt-2 flex flex-wrap gap-2">
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm">Ritual Barba</span>
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm">Perfilado Navaja</span>
+                  <span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm">Urban Sharp</span>
+                </div>
+                <a class="mt-4 inline-flex items-center justify-center gap-2 py-2.5 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container hover:text-on-primary-container transition-colors font-bold" href="reservar.html?barber=iago">
+                  <span>Elegir a Iago</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN LOCALIZACIÓN, HORARIOS Y CONTACTO -->
+      <section class="w-full py-20 lg:py-28 bg-surface-container-lowest relative" id="contacto-ubicacion">
+        <div class="w-full px-margin md:px-margin-desktop max-w-7xl mx-auto flex flex-col gap-space-xl">
+          
+          <!-- Section Title -->
+          <div class="flex flex-col gap-space-xs">
+            <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Encuéntranos en el Casco Histórico</span>
+            <h2 class="font-headline-xl text-3xl sm:text-headline-xl text-on-surface">Ubicación, Horarios y Contacto</h2>
+          </div>
+
+          <!-- 2 Columns: Details & Interactive Stylized Map Card -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-stretch">
+            
+            <!-- Contact & Hours Details Column -->
+            <div class="lg:col-span-6 flex flex-col justify-between gap-space-md">
+              <!-- Hours Card -->
+              <div class="p-8 rounded-2xl bg-surface-container-low shadow-md flex flex-col gap-space-md">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center">
+                      <span class="material-symbols-outlined text-xl">schedule</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface">Horario de Atención</h3>
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">Lugo Time</span>
+                </div>
+                <div class="flex flex-col gap-3 font-body-md text-body-md pt-2">
+                  <div class="flex justify-between items-center py-2 border-b border-surface-container">
+                    <span class="text-on-surface font-medium">Lunes a Viernes</span>
+                    <div class="text-right">
+                      <span class="text-on-surface font-bold">09:00 - 14:00</span>
+                      <span class="text-outline-variant mx-1.5">•</span>
+                      <span class="text-on-surface font-bold">16:00 - 20:00</span>
+                    </div>
+                  </div>
+                  <div class="flex justify-between items-center py-2 border-b border-surface-container">
+                    <span class="text-on-surface font-medium">Sábados</span>
+                    <span class="px-2.5 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm uppercase tracking-wider font-semibold">Cerrado</span>
+                  </div>
+                  <div class="flex justify-between items-center py-2">
+                    <span class="text-on-surface font-medium">Domingos</span>
+                    <span class="px-2.5 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm uppercase tracking-wider font-semibold">Cerrado</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Direct Contact & Social Cards Grid -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Call Direct -->
+                <a class="p-5 rounded-2xl bg-surface-container-low shadow-sm hover:bg-surface-container transition-colors flex items-center gap-4 group" href="tel:666666666">
+                  <div class="w-12 h-12 rounded-xl bg-surface-container-high group-hover:bg-primary-container group-hover:text-on-primary-container text-primary flex items-center justify-center transition-colors">
+                    <span class="material-symbols-outlined text-2xl">call</span>
+                  </div>
+                  <div>
+                    <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Teléfono Directo</p>
+                    <p class="font-headline-sm text-headline-sm text-on-surface mt-0.5">666 666 666</p>
+                  </div>
+                </a>
+
+                <!-- Email Direct -->
+                <a class="p-5 rounded-2xl bg-surface-container-low shadow-sm hover:bg-surface-container transition-colors flex items-center gap-4 group" href="mailto:contacto@peluqueriaarchemil.com">
+                  <div class="w-12 h-12 rounded-xl bg-surface-container-high group-hover:bg-primary-container group-hover:text-on-primary-container text-primary flex items-center justify-center transition-colors">
+                    <span class="material-symbols-outlined text-2xl">mail</span>
+                  </div>
+                  <div class="min-w-0">
+                    <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Email Oficial</p>
+                    <p class="font-body-sm text-body-sm text-on-surface truncate font-semibold mt-0.5">contacto@peluqueriaarchemil.com</p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Social Channels Promo -->
+              <div class="p-6 rounded-2xl bg-surface-container flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-primary text-2xl">photo_camera</span>
+                  <div>
+                    <p class="font-label-md text-label-md text-on-surface font-bold">Síguenos en redes sociales</p>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">Resultados diarios, cortes en directo y promociones @peluqueriaarxemil</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2 shrink-0">
+                  <a class="px-4 py-2 rounded-xl bg-surface-container-high text-on-surface hover:text-primary transition-colors font-label-md text-label-md uppercase tracking-wider font-semibold" href="https://instagram.com" rel="noreferrer" target="_blank">
+                    Instagram
+                  </a>
+                  <a class="px-4 py-2 rounded-xl bg-surface-container-high text-on-surface hover:text-primary transition-colors font-label-md text-label-md uppercase tracking-wider font-semibold" href="https://tiktok.com" rel="noreferrer" target="_blank">
+                    TikTok
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Location Map & Address Visual Column -->
+            <div class="lg:col-span-6 flex flex-col gap-4">
+              <div class="relative w-full h-[360px] lg:h-full min-h-[380px] rounded-2xl overflow-hidden shadow-xl bg-surface-container">
+                <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXStKXjpk-deVNkhbQGpl13BTb2aqROcZ0jnpmhxHrJHCOD4OBMpJnbm9Vn5J7U3_f-7QwSeZ9CayYyH4su9WqjDdvkA0eUB6iC6IN1AoNBjTrzDbZ60HXDjLnGAvuvxd_XD79kM8dEn_JsVM_vaXv22LVxlrUKRwvmcMRm0WVa_kgArDM_0NHlWnpAqHZntNbBO_9Oqe13ofUFCc34FxTdXMN3SNPzWgNUf0VvLtPsEDRnQb1Cdh5dQ')"></div>
+                <div class="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <div class="flex items-start gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+                      <span class="material-symbols-outlined text-xl">location_on</span>
+                    </div>
+                    <div>
+                      <h4 class="font-headline-sm text-headline-sm text-on-surface">Ronda de las Murallas</h4>
+                      <p class="font-body-sm text-body-sm text-on-surface-variant">27002 Lugo, Galicia · Acceso rápido a pie de muralla</p>
+                    </div>
+                  </div>
+                  <a class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-on-surface font-label-sm text-label-sm uppercase tracking-wider transition-colors shrink-0 font-bold" href="https://maps.google.com/?q=Ronda+de+las+Murallas+Lugo" rel="noreferrer" target="_blank">
+                    <span>Cómo llegar</span>
+                    <span class="material-symbols-outlined text-base">directions</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- PERSISTENT CALL TO ACTION FOOTER BANNER -->
+      <section class="w-full py-16 bg-gradient-to-b from-surface-container-lowest to-surface-container relative overflow-hidden">
+        <div class="w-full px-margin md:px-margin-desktop max-w-5xl mx-auto flex flex-col items-center text-center gap-space-md relative z-10">
+          <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-bold">¿Listo para renovar tu imagen?</span>
+          <h2 class="font-headline-xl text-3xl sm:text-headline-xl text-on-surface font-display max-w-2xl">
+            Tu corte perfecto en Lugo a un solo clic de distancia.
+          </h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+            Elige tu barbero favorito, selecciona el día y hora que mejor te convenga y vive la experiencia técnica de Peluquería Arxemil.
+          </p>
+          <div class="pt-4 flex flex-wrap items-center justify-center gap-space-md">
+            <a class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary-container text-on-primary-container font-label-lg text-label-lg uppercase tracking-wider font-bold transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(250,204,21,0.4)] shadow-lg" href="reservar.html">
+              <span class="material-symbols-outlined text-xl">calendar_month</span>
+              <span>Reservar Cita Ahora</span>
+            </a>
+            <a class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-surface-container-high text-on-surface font-label-lg text-label-lg uppercase tracking-wider hover:bg-surface-variant transition-colors font-bold" href="tel:666666666">
+              <span class="material-symbols-outlined text-xl">call</span>
+              <span>Llamar al 666 666 666</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============================================== -->
+  <!-- PIE DE PÁGINA / FOOTER -->
+  <!-- ============================================== -->
+  <footer class="w-full bg-surface-container-lowest text-on-surface-variant border-t border-surface-container">
+    <div class="w-full px-margin md:px-margin-desktop py-space-xl flex flex-col gap-space-xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-desktop">
+        
+        <!-- Column 1: Brand & Bio -->
+        <div class="flex flex-col gap-space-sm">
+          <div class="flex items-center gap-space-sm">
+            <img alt="Peluquería Arxemil Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W31D7vtAoQVq_o2NvlLraVXD9Kd68CmehJ_prHpwPWeEt8pVoklbGdvZiZg01ZHUARSh0Uej4lymP4NqzgDYZGt3jMIWlmRDTQyqMQh8qp2rlXhr5GYnzSlk5DRnv7xfInHejfGFnex_II1R6B1SDzeglp5YmcbwLaey-DJNANjYJIAwbfjG0ZtBB8kdQzPxKqzi6ejvP67dS1773yygPHJSYx4ePcHaaEjpGl4Nq0R4zhS23qLx-VVq8"/>
+            <span class="font-headline-sm text-headline-sm text-on-surface">Peluquería Arxemil</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Estudio de corte y barbería de vanguardia en pleno casco histórico de Lugo. Precisión técnica, degradados pulidos y diseño de autor bajo la atmósfera de la muralla romana.
+          </p>
+          <div class="flex items-center gap-space-sm pt-2">
+            <a class="px-space-md py-1.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high hover:text-primary transition-colors font-semibold" href="https://instagram.com" rel="noreferrer" target="_blank">Instagram</a>
+            <a class="px-space-md py-1.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high hover:text-primary transition-colors font-semibold" href="https://tiktok.com" rel="noreferrer" target="_blank">TikTok</a>
+          </div>
+        </div>
+
+        <!-- Column 2: Location & Contact -->
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-label-lg text-label-lg text-primary uppercase tracking-wider font-bold">Ubicación &amp; Contacto</span>
+          <div class="flex flex-col gap-space-xs font-body-sm text-body-sm">
+            <p class="text-on-surface font-medium">Ronda de las Murallas</p>
+            <p class="text-on-surface-variant">27002 Lugo, Galicia</p>
+            <p class="mt-2 text-on-surface-variant">Teléfono: <span class="text-on-surface font-medium">666 666 666</span></p>
+            <p class="text-on-surface-variant">Email: <span class="text-on-surface font-medium">contacto@peluqueriaarchemil.com</span></p>
+          </div>
+        </div>
+
+        <!-- Column 3: Hours -->
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-label-lg text-label-lg text-primary uppercase tracking-wider font-bold">Horario de Apertura</span>
+          <div class="flex flex-col gap-space-xs font-body-sm text-body-sm">
+            <div class="flex justify-between items-center"><span class="text-on-surface-variant">Lunes a Viernes:</span><span class="text-on-surface font-medium">09:00 - 14:00</span></div>
+            <div class="flex justify-between items-center"><span class="text-on-surface-variant">Tardes:</span><span class="text-on-surface font-medium">16:00 - 20:00</span></div>
+            <div class="flex justify-between items-center"><span class="text-on-surface-variant">Sábados:</span><span class="text-secondary font-medium">Cerrado</span></div>
+            <div class="flex justify-between items-center"><span class="text-on-surface-variant">Domingos:</span><span class="text-secondary font-medium">Cerrado</span></div>
+          </div>
+        </div>
+
+        <!-- Column 4: Fast Navigation -->
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-label-lg text-label-lg text-primary uppercase tracking-wider font-bold">Navegación</span>
+          <div class="flex flex-col gap-space-xs font-label-md text-label-md">
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="index.html">Inicio</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#servicios-catalogo">Carta de Servicios</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#equipo-seccion">Stylists &amp; Barbers</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="reservar.html">Cita Online</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="admin.html">Panel de Empleados / Admin</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Legal bottom bar -->
+      <div class="pt-space-lg border-t border-surface-container flex flex-col sm:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-outline">
+        <p>© 2025 Peluquería Arxemil Lugo. Todos los derechos reservados.</p>
+        <p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-medium">Modern Technical Noir Grooming Hub</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/config.js"></script>
+  <script type="module" src="assets/js/public.js"></script>
+</body>
+</html>

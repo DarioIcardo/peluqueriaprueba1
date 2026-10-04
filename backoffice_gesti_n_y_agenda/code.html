@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary":"#472a00","surface-bright":"#353943","inverse-primary":"#735c00","tertiary-fixed-dim":"#7bd0ff","on-surface":"#dfe2ef","on-secondary-container":"#5b3800","secondary-fixed-dim":"#ffb95f","error-container":"#93000a","inverse-on-surface":"#2c303a","on-tertiary":"#00354a","surface-tint":"#eec200","surface-variant":"#31353f","surface-container-lowest":"#0a0e17","on-secondary-fixed":"#2a1700","outline":"#9a9078","error":"#ffb4ab","on-tertiary-container":"#006083","surface-container-high":"#262a34","surface-container":"#1c1f29","background":"#0f131c","primary-fixed-dim":"#eec200","secondary-fixed":"#ffddb8","surface-dim":"#0f131c","secondary-container":"#ee9800","surface-container-highest":"#31353f","on-error":"#690005","on-primary-container":"#6c5700","on-error-container":"#ffdad6","on-primary-fixed-variant":"#574500","tertiary-fixed":"#c4e7ff","primary-fixed":"#ffe083","on-secondary-fixed-variant":"#653e00","inverse-surface":"#dfe2ef","secondary":"#ffb95f","primary":"#ffecb9","tertiary-container":"#99d9ff","surface-container-low":"#181b25","tertiary":"#dbf0ff","on-surface-variant":"#d1c6ab","outline-variant":"#4d4632","on-tertiary-fixed":"#001e2c","on-tertiary-fixed-variant":"#004c69","on-primary":"#3c2f00","primary-container":"#facc15","on-background":"#dfe2ef","surface":"#0f131c","on-primary-fixed":"#231b00"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-desktop":"1.5rem","margin-desktop":"2rem","space-xl":"2.5rem","space-xs":"0.25rem","space-lg":"1.5rem","space-md":"1rem","space-sm":"0.5rem","gutter":"1rem","margin":"1rem"},"fontFamily":{"headline-xl-mobile":["Syne"],"body-lg":["Plus Jakarta Sans"],"headline-lg":["Syne"],"body-md":["Plus Jakarta Sans"],"headline-xl":["Syne"],"headline-md":["Syne"],"headline-lg-mobile":["Syne"],"headline-sm":["Syne"],"display-mobile":["Syne"],"body-sm":["Plus Jakarta Sans"],"label-lg":["Space Grotesk"],"label-md":["Space Grotesk"],"label-sm":["Space Grotesk"],"display":["Syne"]},"fontSize":{"headline-xl-mobile":["30px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-md":["15px",{"lineHeight":"22px","fontWeight":"400"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["22px",{"lineHeight":"28px","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"30px","letterSpacing":"0em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"display-mobile":["38px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"800"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"18px","letterSpacing":"0.04em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"600"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"700"}],"display":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"800"}]}}}};</script></head><body class="bg-background font-body-md text-body-md text-on-background selection:bg-primary-container selection:text-on-primary-container antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between p-space-md"><div class="flex flex-col gap-space-lg"><div class="flex items-center gap-space-sm px-2 pt-2"><img alt="Peluquería Arxemil Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W31D7vtAoQVq_o2NvlLraVXD9Kd68CmehJ_prHpwPWeEt8pVoklbGdvZiZg01ZHUARSh0Uej4lymP4NqzgDYZGt3jMIWlmRDTQyqMQh8qp2rlXhr5GYnzSlk5DRnv7xfInHejfGFnex_II1R6B1SDzeglp5YmcbwLaey-DJNANjYJIAwbfjG0ZtBB8kdQzPxKqzi6ejvP67dS1773yygPHJSYx4ePcHaaEjpGl4Nq0R4zhS23qLx-VVq8"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">Arxemil</span><span class="font-label-sm text-label-sm text-primary uppercase tracking-widest leading-none mt-1">Backoffice</span></div></div><div class="px-2 py-2 rounded-lg bg-surface-container-low font-label-sm text-label-sm text-on-surface-variant flex items-center justify-between"><span>Sede Murallas</span><span class="w-2 h-2 rounded-full bg-emerald-400"></span></div><nav class="flex flex-col gap-1 font-label-md text-label-md" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 transition-colors bg-primary-container text-on-primary-container font-bold rounded-lg" data-path="backoffice-agenda" href="#"><span class="material-symbols-outlined text-lg">calendar_month</span><span>Agenda &amp; Citas</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="backoffice-equipo" href="#"><span class="material-symbols-outlined text-lg">badge</span><span>Equipo &amp; Horarios</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="backoffice-servicios" href="#"><span class="material-symbols-outlined text-lg">content_cut</span><span>Servicios &amp; Tarifas</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="backoffice-clientes" href="#"><span class="material-symbols-outlined text-lg">group</span><span>Fichas Clientes</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="backoffice-metricas" href="#"><span class="material-symbols-outlined text-lg">insights</span><span>Rendimiento &amp; Caja</span></a></nav></div><div class="flex flex-col gap-space-xs font-label-sm text-label-sm"><a class="flex items-center gap-space-sm px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-base">storefront</span><span>Volver a la Web</span></a><div class="px-space-md py-2 text-outline">v2.4.0 · Lugo Cockpit</div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-md"><span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Operaciones Ronda de las Murallas</span><span class="px-2 py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm">Lugo Centro</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-xl hover:text-on-surface cursor-pointer">search</span><span class="material-symbols-outlined text-xl hover:text-on-surface cursor-pointer">notifications</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="p-margin-desktop flex flex-col gap-space-lg max-w-[1720px] mx-auto w-full">
+<!-- Top System Alert Bar -->
+<div class="bg-surface-container-high px-space-md py-2.5 rounded-xl flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-primary-container text-lg">shield_lock</span>
+<p class="font-label-sm text-label-sm text-on-surface truncate">
+<span class="text-primary-container uppercase font-bold tracking-wider">Modo Exclusivo Web</span>
+<span class="text-on-surface-variant ml-2">Walk-ins desactivados según política de operaciones. El 100% de la carga de trabajo está reservada digitalmente.</span>
+</p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+          Sincronizado en tiempo real
+        </span>
+</div>
+</div>
+<!-- KPI Metrics Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter-desktop">
+<!-- KPI 1 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl relative overflow-hidden flex flex-col justify-between group">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 bg-primary-container/5 rounded-full blur-2xl group-hover:bg-primary-container/10 transition-all"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Citas de Hoy</span>
+<span class="p-2 rounded-lg bg-surface-container text-primary-container material-symbols-outlined text-xl">event_available</span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-headline-xl text-on-surface">18</span>
+<span class="font-label-md text-label-md text-on-surface-variant">/ 18 plazas</span>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden mr-3">
+<div class="bg-primary-container h-full w-full rounded-full"></div>
+</div>
+<span class="font-label-sm text-label-sm text-primary-container font-bold shrink-0">100% Ocupado</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl relative overflow-hidden flex flex-col justify-between group">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 bg-secondary/5 rounded-full blur-2xl group-hover:bg-secondary/10 transition-all"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Facturación Estimada</span>
+<span class="p-2 rounded-lg bg-surface-container text-secondary material-symbols-outlined text-xl">payments</span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-headline-xl text-primary">324 €</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">liquidación física</span>
+</div>
+<div class="mt-space-md flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Ticket medio: <strong class="text-on-surface">18,00 €</strong></span>
+<span class="text-secondary font-semibold">Cobro en Sillón</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl relative overflow-hidden flex flex-col justify-between group">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 bg-tertiary-container/5 rounded-full blur-2xl group-hover:bg-tertiary-container/10 transition-all"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Sillones Operativos</span>
+<span class="p-2 rounded-lg bg-surface-container text-tertiary-fixed-dim material-symbols-outlined text-xl">airline_seat_recline_extra</span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-headline-xl text-on-surface">3 <span class="text-headline-md font-headline-md text-on-surface-variant">/ 3</span></span>
+<span class="font-label-sm text-label-sm text-emerald-400 font-bold">100% Activos</span>
+</div>
+<div class="mt-space-md flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Darío</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Reija</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Iago</span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl relative overflow-hidden flex flex-col justify-between group">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-all"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Jornada Técnica</span>
+<span class="p-2 rounded-lg bg-surface-container text-primary-fixed material-symbols-outlined text-xl">schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">09:00 - 14:00</span>
+<span class="font-label-lg text-label-lg text-on-surface-variant font-medium">16:00 - 20:00</span>
+</div>
+<div class="mt-space-md flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Pausa técnica activa</span>
+<span class="text-primary font-bold">14:00 - 16:00</span>
+</div>
+</div>
+</div>
+<!-- Administrative Master Tabs -->
+<div class="bg-surface-container-low rounded-xl p-1.5 flex flex-wrap gap-1 shadow-sm">
+<button class="flex items-center gap-space-sm px-space-lg py-2.5 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-bold transition-all shadow-sm" id="tab-btn-agenda" onclick="switchTab('agenda')">
+<span class="material-symbols-outlined text-lg">calendar_view_week</span>
+<span>Agenda en Vivo</span>
+</button>
+<button class="flex items-center gap-space-sm px-space-lg py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md font-semibold transition-all" id="tab-btn-servicios" onclick="switchTab('servicios')">
+<span class="material-symbols-outlined text-lg">content_cut</span>
+<span>Gestión de Servicios &amp; Precios</span>
+</button>
+<button class="flex items-center gap-space-sm px-space-lg py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md font-semibold transition-all" id="tab-btn-equipo" onclick="switchTab('equipo')">
+<span class="material-symbols-outlined text-lg">badge</span>
+<span>Equipo &amp; Cuadrantes</span>
+</button>
+<button class="flex items-center gap-space-sm px-space-lg py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md font-semibold transition-all" id="tab-btn-config" onclick="switchTab('config')">
+<span class="material-symbols-outlined text-lg">settings_suggest</span>
+<span>Configuración Negocio</span>
+</button>
+</div>
+<!-- TAB 1: AGENDA EN VIVO (ACTIVE) -->
+<div class="flex flex-col gap-space-lg" id="content-agenda">
+<!-- Agenda Sub-Filters Bar -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col lg:flex-row gap-space-md lg:items-center lg:justify-between">
+<!-- Day Navigation -->
+<div class="flex items-center gap-space-sm bg-surface-container p-1 rounded-lg shrink-0">
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface-container-high text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<div class="px-space-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-base">today</span>
+<span class="font-label-md text-label-md text-on-surface font-bold tracking-wide">Miércoles, 24 Octubre 2024</span>
+</div>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface-container-high text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+<!-- Barber Toggle Pills -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-highest text-primary-fixed font-label-sm text-label-sm font-bold shadow-sm whitespace-nowrap">
+            Todos (18 citas)
+          </button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-medium whitespace-nowrap transition-colors">
+            Darío (6 citas)
+          </button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-medium whitespace-nowrap transition-colors">
+            Reija (6 citas)
+          </button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-medium whitespace-nowrap transition-colors">
+            Iago (6 citas)
+          </button>
+</div>
+<!-- Search input -->
+<div class="relative w-full lg:w-72">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-lg">search</span>
+<input class="w-full h-10 pl-10 pr-3 rounded-lg bg-surface-container text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-high transition-colors" placeholder="Filtrar por cliente o teléfono..." type="text"/>
+</div>
+</div>
+<!-- Schedule Architecture (3 Barber Columns + Left Time Axis) -->
+<div class="bg-surface-container-low rounded-xl p-space-md overflow-x-auto shadow-sm">
+<div class="min-w-[980px] flex flex-col gap-space-lg">
+<!-- Column Headers: Stylists -->
+<div class="grid grid-cols-12 gap-space-md border-none">
+<div class="col-span-1 text-center py-2">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Bloque</span>
+</div>
+<!-- Stylist 1 -->
+<div class="col-span-3 bg-surface-container p-space-md rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg overflow-hidden bg-surface-container-high shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up monochrome artistic portrait of Dario, a stylish modern barber with sharp grooming, dark urban technical studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRLY4kEuVOt-wzkpl1VgtAdacSww0xC1tH-uyyG1hZCjrvuqOkDQTWlTjuh-ER8vGa8xMkVpJKlJRPc1gInUR580wpTEv8XCfzbcdU3PZaAYkpNme1ID_cW_freA-FjFHXaN06hCah6XpH44fSzlYAarCSQkc2vsG54qWyw56xXdjv4jqsDMkmC6EEegs4P3dnX3Hy4hxF4RlmZIn74zygVSEbQFWU04xyQPY4bO05FjfZEGThmCTrVg"/>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Darío</h2>
+<span class="font-label-sm text-label-sm text-primary-container font-semibold">Sillón 01 · Fade Master</span>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold">6/6 Citas</span>
+</div>
+</div>
+<!-- Stylist 2 -->
+<div class="col-span-4 bg-surface-container p-space-md rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg overflow-hidden bg-surface-container-high shrink-0">
+<img class="w-full h-full object-cover" data-alt="Monochrome sharp portrait of Reija, an experienced urban male barber in black technical apron, dramatic sidelight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmuCTXQPHHroH04ubVjJ5kvVfLkPOveg05fh0A99my1cAGE0BjEJFfGm12h8Kti51iHT616hfnDvHuzNG64p5t0JIRuUI7oEIVFMVeDN8yNQjfdO00zq4tjXpbRNVPGiG8rxzvA0GJzDp5k1tSpJjsTU0Ioa6pA5IkehxBqGnt-7XXhS83Lzmzdip0cen4BM1228x8hgXBzIEmPhnAIaMCI_iZfVNK0H5hP74_TACH-JoVym41hCcjhQ"/>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Reija</h2>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Sillón 02 · Beard Specialist</span>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold">6/6 Citas</span>
+</div>
+</div>
+<!-- Stylist 3 -->
+<div class="col-span-4 bg-surface-container p-space-md rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg overflow-hidden bg-surface-container-high shrink-0">
+<img class="w-full h-full object-cover" data-alt="Atmospheric dark portrait of Iago, a skilled barber professional looking focused, rim lighting, sleek salon studio backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkIIzlxmdJ7lqAY0FxwB6WnnnNgnudjHmOqAoUoOeuIMVJrPCX2U726uMI6-AXWHbb82sU7BJkWbKdDtMrTHOguIzEprYcPmGQVnfkUBjY7Sl3AWVSxb9gnssLGfvukYmIxjOP2dGrOuBh0125lksstPXQGrK-k8IIsOg0N0bTPeVp0xEJmLrjYLLoGLf3Hu1UJ3PTc-C2I0wukfcB8L-bN_kJr8LK2nRw1-QhEoN5hQCmWMYsenHPig"/>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Iago</h2>
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim font-semibold">Sillón 03 · Texture &amp; Sculpt</span>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold">6/6 Citas</span>
+</div>
+</div>
+</div>
+<!-- MORNING BLOCK (09:00 - 14:00) -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-space-md py-1">
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-widest text-primary px-2.5 py-1 rounded bg-surface-container">Turno Mañana (09:00 - 14:00)</span>
+<div class="h-[1px] flex-1 bg-surface-container-high"></div>
+</div>
+<!-- Row 1: 09:00 -->
+<div class="grid grid-cols-12 gap-space-md items-stretch py-1">
+<div class="col-span-1 flex flex-col justify-start pt-2 text-right pr-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">09:00</span>
+<span class="font-label-sm text-label-sm text-outline">09:45</span>
+</div>
+<!-- Dario 09:00 -->
+<div class="col-span-3 bg-surface-container p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm font-semibold">Completada</span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">Alberto R.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tel: 611 223 344</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">15 €</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">content_cut</span> Corte de pelo</span>
+<span>45 min</span>
+</div>
+</div>
+<!-- Reija 09:00 -->
+<div class="col-span-4 bg-surface-container p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm font-semibold">Completada</span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">David Fernández</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tel: 644 112 233</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">19 €</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">face</span> Corte con barba</span>
+<span>55 min</span>
+</div>
+</div>
+<!-- Iago 09:00 -->
+<div class="col-span-4 bg-surface-container p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm font-semibold">Completada</span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">Manuel Soto</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tel: 688 990 011</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">17 €</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">visibility</span> Corte con cejas</span>
+<span>50 min</span>
+</div>
+</div>
+</div>
+<!-- Row 2: 10:00 (Back-to-back zero dead time) -->
+<div class="grid grid-cols-12 gap-space-md items-stretch py-1">
+<div class="col-span-1 flex flex-col justify-start pt-2 text-right pr-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">10:00</span>
+<span class="font-label-sm text-label-sm text-outline">10:55</span>
+</div>
+<!-- Dario 10:00 -->
+<div class="col-span-3 bg-surface-container p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm font-semibold">Completada</span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">Lucas Varela</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tel: 655 443 322</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">19 €</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">face</span> Corte con barba</span>
+<span>55 min</span>
+</div>
+</div>
+<!-- Reija 10:00 -->
+<div class="col-span-4 bg-surface-container p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm font-semibold">Completada</span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">Brais Costas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tel: 633 221 100</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">20 €</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">stars</span> Corte + Barba + Cejas</span>
+<span>60 min</span>
+</div>
+</div>
+<!-- Iago 10:00 -->
+<div class="col-span-4 bg-surface-container p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm font-semibold">Completada</span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">Hugo Méndez</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tel: 677 889 900</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">15 €</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">content_cut</span> Corte de pelo</span>
+<span>45 min</span>
+</div>
+</div>
+</div>
+<!-- Row 3: 11:45 -->
+<div class="grid grid-cols-12 gap-space-md items-stretch py-1">
+<div class="col-span-1 flex flex-col justify-start pt-2 text-right pr-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">11:45</span>
+<span class="font-label-sm text-label-sm text-outline">12:40</span>
+</div>
+<!-- Dario 11:45 -->
+<div class="col-span-3 bg-surface-container p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm font-semibold">Completada</span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">Carlos M.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tel: 622 334 455</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">19 €</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">face</span> Corte con barba</span>
+<span>55 min</span>
+</div>
+</div>
+<!-- Reija 11:45 -->
+<div class="col-span-4 bg-surface-container p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm font-semibold">Completada</span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">Javier Gómez</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tel: 699 001 122</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">17 €</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">visibility</span> Corte con cejas</span>
+<span>50 min</span>
+</div>
+</div>
+<!-- Iago 11:45 -->
+<div class="col-span-4 bg-surface-container p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm font-semibold">Completada</span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">Rubén Novo</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tel: 611 778 899</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">19 €</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">face</span> Corte con barba</span>
+<span>55 min</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Midday Break Strip -->
+<div class="bg-surface-container-lowest py-3 px-space-lg rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm text-outline">
+<span class="material-symbols-outlined text-lg">restaurant</span>
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">Cierre Técnico e Higienización del Salón (14:00 - 16:00)</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">3 Sillones en pausa programada</span>
+</div>
+<!-- AFTERNOON BLOCK (16:00 - 20:00) -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-space-md py-1">
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-widest text-primary-container px-2.5 py-1 rounded bg-surface-container">Turno Tarde (16:00 - 20:00)</span>
+<div class="h-[1px] flex-1 bg-surface-container-high"></div>
+</div>
+<!-- Row 4: 16:00 (CURRENT IN PROGRESS) -->
+<div class="grid grid-cols-12 gap-space-md items-stretch py-1 relative">
+<!-- Real-time Laser Line indicator -->
+<div class="absolute -top-1 left-0 right-0 h-[2px] bg-primary-container z-20 pointer-events-none flex items-center">
+<span class="w-3 h-3 rounded-full bg-primary-container -ml-1.5 shadow-[0_0_12px_#facc15] animate-ping"></span>
+<span class="ml-4 font-label-sm text-label-sm bg-primary-container text-on-primary-container px-2 py-0.5 rounded font-bold">16:35 · Tiempo actual en curso</span>
+</div>
+<div class="col-span-1 flex flex-col justify-start pt-2 text-right pr-2">
+<span class="font-label-md text-label-md text-primary-container font-bold">16:00</span>
+<span class="font-label-sm text-label-sm text-outline">17:00</span>
+</div>
+<!-- Dario 16:00 - EN CURSO -->
+<div class="col-span-3 bg-surface-container-high p-space-md rounded-xl flex flex-col justify-between shadow-[0_0_24px_-6px_rgba(250,204,21,0.25)] relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-start justify-between gap-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary-container animate-pulse"></span>
+                      En Curso
+                    </span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">Marcos L.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tel: 660 554 433</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary-container font-extrabold">20 €</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface flex items-center gap-1 font-semibold"><span class="material-symbols-outlined text-sm">stars</span> Corte + Barba + Cejas</span>
+<span class="text-primary-container font-bold">60 min</span>
+</div>
+</div>
+<!-- Reija 16:00 - EN CURSO -->
+<div class="col-span-4 bg-surface-container-high p-space-md rounded-xl flex flex-col justify-between shadow-[0_0_24px_-6px_rgba(250,204,21,0.25)] relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-start justify-between gap-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary-container animate-pulse"></span>
+                      En Curso
+                    </span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">Adrián Santiso</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tel: 622 998 877</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary-container font-extrabold">19 €</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface flex items-center gap-1 font-semibold"><span class="material-symbols-outlined text-sm">face</span> Corte con barba</span>
+<span class="text-primary-container font-bold">55 min</span>
+</div>
+</div>
+<!-- Iago 16:00 - EN CURSO -->
+<div class="col-span-4 bg-surface-container-high p-space-md rounded-xl flex flex-col justify-between shadow-[0_0_24px_-6px_rgba(250,204,21,0.25)] relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-start justify-between gap-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary-container animate-pulse"></span>
+                      En Curso
+                    </span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">Alejandro Paz</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tel: 644 332 211</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary-container font-extrabold">15 €</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface flex items-center gap-1 font-semibold"><span class="material-symbols-outlined text-sm">content_cut</span> Corte de pelo</span>
+<span class="text-primary-container font-bold">45 min</span>
+</div>
+</div>
+</div>
+<!-- Row 5: 17:50 (UPCOMING) -->
+<div class="grid grid-cols-12 gap-space-md items-stretch py-1">
+<div class="col-span-1 flex flex-col justify-start pt-2 text-right pr-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">17:50</span>
+<span class="font-label-sm text-label-sm text-outline">18:45</span>
+</div>
+<!-- Dario 17:50 - PRÓXIMA -->
+<div class="col-span-3 bg-surface-container p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary-fixed font-label-sm text-label-sm font-semibold">Próxima</span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">Juan Pérez</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tel: 610 998 877</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">19 €</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">face</span> Corte con barba</span>
+<span>55 min</span>
+</div>
+</div>
+<!-- Reija 17:50 - PRÓXIMA -->
+<div class="col-span-4 bg-surface-container p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary-fixed font-label-sm text-label-sm font-semibold">Próxima</span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">Gabriel Prado</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tel: 677 223 344</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">20 €</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">stars</span> Corte + Barba + Cejas</span>
+<span>60 min</span>
+</div>
+</div>
+<!-- Iago 17:50 - PRÓXIMA -->
+<div class="col-span-4 bg-surface-container p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary-fixed font-label-sm text-label-sm font-semibold">Próxima</span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">Mateo Silva</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tel: 688 112 334</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">17 €</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">visibility</span> Corte con cejas</span>
+<span>50 min</span>
+</div>
+</div>
+</div>
+<!-- Row 6: 18:50 (LAST BLOCK OF DAY) -->
+<div class="grid grid-cols-12 gap-space-md items-stretch py-1">
+<div class="col-span-1 flex flex-col justify-start pt-2 text-right pr-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">18:50</span>
+<span class="font-label-sm text-label-sm text-outline">19:45</span>
+</div>
+<!-- Dario 18:50 -->
+<div class="col-span-3 bg-surface-container p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary-fixed font-label-sm text-label-sm font-semibold">Próxima</span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">Rodrigo Díaz</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tel: 633 445 566</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">15 €</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">content_cut</span> Corte de pelo</span>
+<span>45 min</span>
+</div>
+</div>
+<!-- Reija 18:50 -->
+<div class="col-span-4 bg-surface-container p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary-fixed font-label-sm text-label-sm font-semibold">Próxima</span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">Martín Veiga</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tel: 655 778 899</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">19 €</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">face</span> Corte con barba</span>
+<span>55 min</span>
+</div>
+</div>
+<!-- Iago 18:50 -->
+<div class="col-span-4 bg-surface-container p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary-fixed font-label-sm text-label-sm font-semibold">Próxima</span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">Pablo Casal</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tel: 600 112 244</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">19 €</span>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">face</span> Corte con barba</span>
+<span>55 min</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 2: GESTIÓN DE SERVICIOS -->
+<div class="hidden flex-col gap-space-lg" id="content-servicios">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Catálogo Oficial de Servicios &amp; Tarifas</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Los 4 servicios esenciales de Peluquería Arxemil con sus tiempos calibrados sin tiempos muertos.</p>
+</div>
+<button class="px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-bold flex items-center gap-2 hover:brightness-110 transition-all shadow-sm" onclick="openModal('Servicio')">
+<span class="material-symbols-outlined text-base">add</span>
+<span>Añadir Servicio Especial</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter-desktop">
+<!-- Service 1 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-2.5 py-1 rounded bg-surface-container text-primary-container font-label-sm text-label-sm font-bold">Básico Studio</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors" onclick="editService('Corte de pelo', '15', '45')">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Corte de pelo</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">Corte tradicional o fade con lavado estructurado y peinado con producto premium matte.</p>
+</div>
+<div class="mt-space-lg pt-space-md border-none flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>45 min</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary font-bold">15 €</span>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-2.5 py-1 rounded bg-surface-container text-secondary font-label-sm text-label-sm font-bold">Perfilado &amp; Mirada</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors" onclick="editService('Corte con cejas', '17', '50')">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Corte con cejas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">Arquitectura capilar integral junto a definición y limpieza de cejas con navaja barbera.</p>
+</div>
+<div class="mt-space-lg pt-space-md border-none flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>50 min</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary font-bold">17 €</span>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-2.5 py-1 rounded bg-surface-container text-tertiary-fixed-dim font-label-sm text-label-sm font-bold">Ritual Clásico</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors" onclick="editService('Corte con barba', '19', '55')">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Corte con barba</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">Corte completo y esculpido de barba a tijera y máquina con toalla caliente y bálsamo.</p>
+</div>
+<div class="mt-space-lg pt-space-md border-none flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>55 min</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary font-bold">19 €</span>
+</div>
+</div>
+<!-- Service 4 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-2.5 py-1 rounded bg-surface-container text-primary font-label-sm text-label-sm font-bold">Full Grooming</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors" onclick="editService('Corte con barba y cejas', '20', '60')">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Corte + Barba + Cejas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">La experiencia total Arxemil: arreglo maestro, barba ritual con toalla caliente y cejas nítidas.</p>
+</div>
+<div class="mt-space-lg pt-space-md border-none flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>60 min</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary font-bold">20 €</span>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 3: EQUIPO Y HORARIOS -->
+<div class="hidden flex-col gap-space-lg" id="content-equipo">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Equipo Técnico &amp; Cuadrantes Semanales</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Los 3 profesionales operan con idéntico horario y disponen de habilitación para el 100% de los servicios.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">Jornada 40h Semanales</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+<!-- Darío Card -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden flex flex-col shadow-sm">
+<div class="h-44 relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="High contrast monochromatic portrait of professional barber Dario with sharp fades and razor tools in background, dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY2v7dfIwHzS7SS-QT8-3R-h_bnBH8AzNsSp4D59Wzaiq8Rf_YcGV6uu7nUQq52ScgDmr8ZH414Ba4mH1AjIODjuwQqR3kUdDx0PjxnqjzY-iCKh8cCqamdc5bm9QCMAmCOtj2BK6hY7V3yL5v35fW5pMQf2UUUb6IbnUXgJ0uFbZYojws7dXvqwmI4Fn0rmTLkTNDUzOkUYuKLjHPT3SN02dCpnz3te8bHeGz0xmFkGyit7iB2BJDzA"/>
+<span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md text-emerald-400 font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Activo Hoy
+            </span>
+</div>
+<div class="p-space-lg flex flex-col gap-space-md flex-1 justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Darío</h3>
+<p class="font-label-sm text-label-sm text-primary font-bold">Sillón Técnico 01</p>
+<div class="mt-space-md p-space-md rounded-lg bg-surface-container flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Horario Lunes a Viernes</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">09:00 - 14:00 | 16:00 - 20:00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Sábados &amp; Domingos: Descanso reglamentario</span>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Capacidad Servicios:</span>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">4/4 Habilitados</span>
+</div>
+</div>
+</div>
+<!-- Reija Card -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden flex flex-col shadow-sm">
+<div class="h-44 relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Black and white sharp photo of barber Reija posing in studio with barber shears, dark background and sleek lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCejupV-MMEURaSDx--PavcASXub2MoMS5NpSu91ZGrGQR1FtNlmDWcdeNGEoU7ENwgz0pKR-XNSLrczLFGE9f1cx1ko_oRQ3VzutoYN4AJ-jgOsVuQdkX9er1dwqJIq1hu5zW-YeSRSbyBTGA6T8HlTPUX9-gODEt98hYghGD9E4N7d6FqI6oGsG76KQjxmBkrWd-J3SMHlG-W75su3RhBkL2s3goKP9VawhC5WsldIsM2UzsBbrHcbg"/>
+<span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md text-emerald-400 font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Activo Hoy
+            </span>
+</div>
+<div class="p-space-lg flex flex-col gap-space-md flex-1 justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Reija</h3>
+<p class="font-label-sm text-label-sm text-secondary font-bold">Sillón Técnico 02</p>
+<div class="mt-space-md p-space-md rounded-lg bg-surface-container flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Horario Lunes a Viernes</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">09:00 - 14:00 | 16:00 - 20:00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Sábados &amp; Domingos: Descanso reglamentario</span>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Capacidad Servicios:</span>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">4/4 Habilitados</span>
+</div>
+</div>
+</div>
+<!-- Iago Card -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden flex flex-col shadow-sm">
+<div class="h-44 relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Monochrome aesthetic portrait of barber Iago in black studio apron holding hair styling comb, moody dramatic dark lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRZjFkG8STBGNH8c-Bs-zGJySXOW1fQBYyJ2b8qcAdWOZyyieO2N5xylEtWc4dCnQtOBjZgqlgf_xt7zu_mn06fGHddJm1_wJ6YRnzHkavF86_ob07XtRsT9lDIP11Tv_wwxLd919H54ENs7REW1fLwYru2F1fjEvMntw6RbmHvEBbPNWKZ1fUmSzRxYeNYad-8-YVvRFj9DbJjUZN2m5CfceJfSz7H2v9QyBeTRcI2qBFiOwrRdkXxA"/>
+<span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md text-emerald-400 font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Activo Hoy
+            </span>
+</div>
+<div class="p-space-lg flex flex-col gap-space-md flex-1 justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Iago</h3>
+<p class="font-label-sm text-label-sm text-tertiary-fixed-dim font-bold">Sillón Técnico 03</p>
+<div class="mt-space-md p-space-md rounded-lg bg-surface-container flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Horario Lunes a Viernes</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">09:00 - 14:00 | 16:00 - 20:00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Sábados &amp; Domingos: Descanso reglamentario</span>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Capacidad Servicios:</span>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">4/4 Habilitados</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 4: CONFIGURACIÓN NEGOCIO -->
+<div class="hidden flex-col gap-space-lg" id="content-config">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Parámetros del Negocio &amp; Ubicación</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Identidad de la sede, contacto directo y sincronización del canal web.</p>
+</div>
+<button class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold hover:brightness-105 transition-all">
+          Guardar Cambios
+        </button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter-desktop">
+<!-- Physical Location View -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm text-on-surface">
+<span class="material-symbols-outlined text-primary">pin_drop</span>
+<h3 class="font-headline-sm text-headline-sm">Sede Central Lugo</h3>
+</div>
+<div class="w-full h-48 bg-cover bg-center rounded-lg relative overflow-hidden" data-location="Ronda de las Murallas, Lugo, Spain" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXStKXjpk-deVNkhbQGpl13BTb2aqROcZ0jnpmhxHrJHCOD4OBMpJnbm9Vn5J7U3_f-7QwSeZ9CayYyH4su9WqjDdvkA0eUB6iC6IN1AoNBjTrzDbZ60HXDjLnGAvuvxd_XD79kM8dEn_JsVM_vaXv22LVxlrUKRwvmcMRm0WVa_kgArDM_0NHlWnpAqHZntNbBO_9Oqe13ofUFCc34FxTdXMN3SNPzWgNUf0VvLtPsEDRnQb1Cdh5dQ')">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-80"></div>
+<div class="absolute bottom-3 left-3 right-3 text-on-surface">
+<p class="font-label-md text-label-md font-bold">Ronda de las Murallas</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">27001 Lugo, Galicia</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 pt-2">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Dirección Física</label>
+<input class="h-10 px-3 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none" type="text" value="Ronda de las Murallas, 27001 Lugo"/>
+</div>
+</div>
+<!-- Contact & Operations info -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary">support_agent</span>
+<h3 class="font-headline-sm text-headline-sm">Canales &amp; Contacto</h3>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Teléfono de Atención (Citas Web)</label>
+<div class="flex items-center gap-2">
+<input class="h-10 px-3 w-full rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none" type="text" value="666 666 666"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Email Oficial de Operaciones</label>
+<input class="h-10 px-3 w-full rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none" type="email" value="contacto@peluqueriaarxemil.com"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Instagram &amp; Redes</label>
+<input class="h-10 px-3 w-full rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none" type="text" value="@peluqueria_arxemil"/>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container mt-space-md">
+<span class="font-label-sm text-label-sm text-primary font-bold">Política Anti Walk-in</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">El sitio web gestiona el 100% del aforo para asegurar citas continuas sin interrupciones para el cliente.</p>
+</div>
+</div>
+<!-- System & Capacity Info -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm text-on-surface">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">tune</span>
+<h3 class="font-headline-sm text-headline-sm">Reglas de Negocio</h3>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container">
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Reserva Anticipada Mínima</p>
+<p class="font-body-sm text-body-sm text-outline">Margen para slots inmediatos</p>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">2 Horas</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container">
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Tiempo Muerto Permitido</p>
+<p class="font-body-sm text-body-sm text-outline">Optimización continua</p>
+</div>
+<span class="font-label-md text-label-md text-emerald-400 font-bold">0 min (Consecutivo)</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container">
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Cobro en el Local</p>
+<p class="font-body-sm text-body-sm text-outline">Liquidación presencial</p>
+</div>
+<span class="font-label-md text-label-md text-primary-container font-bold">Habilitado</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm pt-space-md">
+<span>Cockpit v2.4.0</span>
+<span>Servidor Operativo</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Edit Modal (Hidden by default, triggered by JS) -->
+<div class="fixed inset-0 z-50 bg-surface-container-lowest/80 backdrop-blur-md hidden items-center justify-center p-space-md" id="service-modal">
+<div class="bg-surface-container-low max-w-md w-full rounded-2xl p-space-lg shadow-2xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface" id="modal-service-title">Editar Tarifa de Servicio</h3>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:text-primary" onclick="closeModal()">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-md mt-2">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Nombre del Servicio</label>
+<input class="h-11 px-3 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-high" id="modal-input-name" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Precio (€)</label>
+<input class="h-11 px-3 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-high" id="modal-input-price" type="number"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Duración (min)</label>
+<input class="h-11 px-3 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-high" id="modal-input-duration" type="number"/>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm mt-space-md">
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md font-semibold hover:bg-surface-container-high" onclick="closeModal()">Cancelar</button>
+<button class="px-space-md py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-bold" onclick="closeModal()">Guardar Tarifa</button>
+</div>
+</div>
+</div>
+<script>
+    function switchTab(tabId) {
+      // Hide all tabs
+      const tabs = ['agenda', 'servicios', 'equipo', 'config'];
+      tabs.forEach(t => {
+        const content = document.getElementById('content-' + t);
+        const btn = document.getElementById('tab-btn-' + t);
+        if (content) {
+          content.classList.add('hidden');
+          content.classList.remove('flex');
+        }
+        if (btn) {
+          btn.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-bold');
+          btn.classList.add('text-on-surface-variant', 'font-semibold');
+        }
+      });
+
+      // Show selected
+      const activeContent = document.getElementById('content-' + tabId);
+      const activeBtn = document.getElementById('tab-btn-' + tabId);
+      if (activeContent) {
+        activeContent.classList.remove('hidden');
+        activeContent.classList.add('flex');
+      }
+      if (activeBtn) {
+        activeBtn.classList.remove('text-on-surface-variant', 'font-semibold');
+        activeBtn.classList.add('bg-primary-container', 'text-on-primary-container', 'font-bold');
+      }
+    }
+
+    function editService(name, price, duration) {
+      document.getElementById('modal-service-title').innerText = 'Modificar ' + name;
+      document.getElementById('modal-input-name').value = name;
+      document.getElementById('modal-input-price').value = price;
+      document.getElementById('modal-input-duration').value = duration;
+      const modal = document.getElementById('service-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function openModal() {
+      document.getElementById('modal-service-title').innerText = 'Nuevo Servicio Especial';
+      document.getElementById('modal-input-name').value = '';
+      document.getElementById('modal-input-price').value = '25';
+      document.getElementById('modal-input-duration').value = '45';
+      const modal = document.getElementById('service-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('service-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  </script>
+</div></main></div></body></html>
