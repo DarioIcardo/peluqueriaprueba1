@@ -617,10 +617,10 @@ function renderSlotPill(slot) {
 
   if (!slot.available) {
     return `
-      <div class="p-3 rounded-xl bg-surface-container-lowest/60 text-outline-variant font-label-md text-label-md flex flex-col items-center gap-1 cursor-not-allowed border border-surface-container-lowest" title="Turno no disponible">
-        <span class="line-through opacity-40">${slot.timeLabel}</span>
-        <span class="text-[10px] text-error/70 font-semibold">Ocupado</span>
-      </div>
+      <button disabled class="time-slot p-3 rounded-xl bg-surface-container-lowest/60 text-outline-variant font-label-md text-label-md flex flex-col items-center gap-1 cursor-not-allowed border border-surface-container-lowest pointer-events-none opacity-50" title="Horario ya reservado u ocupado" type="button">
+        <span class="line-through opacity-50">${slot.timeLabel}</span>
+        <span class="text-[10px] text-error/80 font-bold">Ocupado</span>
+      </button>
     `;
   }
 
