@@ -938,7 +938,7 @@ window.completeBookingModal = async function() {
     `;
   }
 
-  // Payload limpio conteniendo ÚNICAMENTE las columnas reales existentes en la tabla appointments
+  // Payload estrictamente limpio conteniendo ÚNICAMENTE las 11 columnas reales existentes en la tabla appointments
   const payload = {
     business_id: businessId,
     worker_id: targetWorkerId,
@@ -952,6 +952,13 @@ window.completeBookingModal = async function() {
     total_price: selectedService.rawPrice || parseFloat(selectedService.price) || 15.00,
     status: 'confirmed'
   };
+
+  // Garantizar que NUNCA se envíen service_id, starts_at o ends_at
+  delete payload.service_id;
+  delete payload.starts_at;
+  delete payload.ends_at;
+
+  console.log('Payload a insertar en Supabase:', payload);
 
   // Copia completa de datos de la cita para inyectar en el modal de confirmación
   const appointmentSummary = {
