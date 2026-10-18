@@ -290,10 +290,31 @@ export async function createAppointment(appointmentData) {
     return { data: appointmentData, error: null };
   }
 
+  // Sanitizar el objeto para asegurar que NUNCA contenga service_id, starts_at o ends_at
+  const cleanPayload = {
+    business_id: appointmentData.business_id,
+    worker_id: appointmentData.worker_id,
+    appointment_code: appointmentData.appointment_code,
+    customer_name: appointmentData.customer_name,
+    customer_phone: appointmentData.customer_phone,
+    customer_email: appointmentData.customer_email,
+    appointment_date: appointmentData.appointment_date,
+    start_time: appointmentData.start_time,
+    end_time: appointmentData.end_time,
+    total_price: appointmentData.total_price,
+    status: appointmentData.status
+  };
+
+  delete cleanPayload.service_id;
+  delete cleanPayload.starts_at;
+  delete cleanPayload.ends_at;
+
+  console.log('[Supabase INSERT] Enviando payload a appointments:', cleanPayload);
+
   try {
     let { data, error } = await client
       .from('appointments')
-      .insert([appointmentData])
+      .insert([cleanPayload])
       .select()
       .maybeSingle();
 
@@ -301,15 +322,15 @@ export async function createAppointment(appointmentData) {
       // Si RLS restringe la lectura posterior (SELECT), reintentar solo el INSERT sin .select()
       const insertResult = await client
         .from('appointments')
-        .insert([appointmentData]);
+        .insert([cleanPayload]);
 
       if (!insertResult.error) {
-        return { data: appointmentData, error: null };
+        return { data: cleanPayload, error: null };
       }
       return { data: null, error: insertResult.error };
     }
 
-    return { data: data || appointmentData, error: null };
+    return { data: data || cleanPayload, error: null };
   } catch (err) {
     return { data: null, error: err };
   }
