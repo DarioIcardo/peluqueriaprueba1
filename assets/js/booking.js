@@ -399,6 +399,121 @@ function renderWorkers() {
   });
 }
 
+/**
+ * Compara la fecha de una celda del calendario con el estado actual (selectedDate / selectedDateIso).
+ * @param {string} dateIso Fecha ISO de la celda ("YYYY-MM-DD")
+ * @param {number} day Día del mes (1..31)
+ * @param {number} month Índice del mes (0..11)
+ * @param {number} year Año (ej: 2026)
+ * @param {string} labelDateText Texto legible de la celda
+ * @param {string|null} selectedDateIso Fecha ISO en el estado
+ * @param {string|Date|null} selectedDate Fecha legible, Date o ISO en el estado
+ * @returns {boolean}
+ */
+function isDateMatchingSelection(dateIso, day, month, year, labelDateText, selectedDateIso, selectedDate) {
+  // 1. Comparación directa por ISO
+  if (selectedDateIso && selectedDateIso === dateIso) {
+    return true;
+  }
+
+  if (!selectedDate) {
+    return false;
+  }
+
+  // 2. Si selectedDate es una instancia de Date
+  if (selectedDate instanceof Date && !isNaN(selectedDate.getTime())) {
+    return (
+      selectedDate.getFullYear() === year &&
+      selectedDate.getMonth() === month &&
+      selectedDate.getDate() === day
+    );
+  }
+
+  // 3. Si selectedDate es string
+  if (typeof selectedDate === 'string') {
+    const trimmed = selectedDate.trim();
+    if (!trimmed) return false;
+
+    // Coincidencia exacta con dateIso ("YYYY-MM-DD") o prefijo ISO
+    if (trimmed === dateIso || trimmed.startsWith(dateIso) || trimmed.includes(dateIso)) {
+      return true;
+    }
+
+    // Coincidencia con etiqueta legible exacta o parcial
+    if (labelDateText && (trimmed === labelDateText || trimmed.includes(labelDateText) || labelDateText.includes(trimmed))) {
+      return true;
+    }
+
+    // Comprobar coincidencia con nombre de mes y número de día
+    const monthName = MONTH_NAMES[month].toLowerCase();
+    const trimmedLower = trimmed.toLowerCase();
+    if (trimmedLower.includes(monthName)) {
+      const matchNumbers = trimmedLower.match(/\b\d{1,2}\b/g);
+      if (matchNumbers) {
+        for (const numStr of matchNumbers) {
+          if (parseInt(numStr, 10) === day) {
+            return true;
+          }
+        }
+      }
+    }
+
+    // Si es parseable como Date
+    const parsed = new Date(trimmed);
+    if (!isNaN(parsed.getTime())) {
+      if (parsed.getFullYear() === year && parsed.getMonth() === month && parsed.getDate() === day) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
+/**
+ * Reafirma el estado visual activo en el botón correspondiente del calendario.
+ */
+function ensureCalendarDayVisualSelection() {
+  const grid = document.getElementById('calendar-grid');
+  if (!grid) return;
+
+  const buttons = grid.querySelectorAll('button[data-date-iso]');
+  if (buttons.length === 0) return;
+
+  const selectedDateState = window.bookingState?.selectedDate ?? window.selectedDate;
+  const selectedDateIsoState = window.bookingState?.selectedDateIso;
+
+  const viewDate = window.bookingState.currentCalendarViewDate || new Date();
+  const year = viewDate.getFullYear();
+  const month = viewDate.getMonth();
+
+  buttons.forEach(btn => {
+    const btnIso = btn.getAttribute('data-date-iso');
+    const btnLabel = btn.getAttribute('data-date-label');
+    const day = parseInt(btn.innerText.trim(), 10);
+
+    const isMatch = isDateMatchingSelection(
+      btnIso,
+      day,
+      month,
+      year,
+      btnLabel,
+      selectedDateIsoState,
+      selectedDateState
+    );
+
+    if (isMatch) {
+      btn.classList.add('active-date', 'selected', 'active', 'bg-primary-container', 'text-on-primary-container', 'font-bold', 'shadow-[0_0_18px_#facc15]', 'scale-105');
+      btn.classList.remove('bg-surface-container-high', 'hover:bg-surface-container-highest', 'text-on-surface');
+      btn.setAttribute('aria-selected', 'true');
+    } else {
+      btn.classList.remove('active-date', 'selected', 'active', 'bg-primary-container', 'text-on-primary-container', 'font-bold', 'shadow-[0_0_18px_#facc15]', 'scale-105');
+      btn.classList.add('bg-surface-container-high', 'hover:bg-surface-container-highest', 'text-on-surface');
+      btn.setAttribute('aria-selected', 'false');
+    }
+  });
+}
+
 function renderCalendar() {
   const monthLabel = document.getElementById('calendar-month-label');
   const grid = document.getElementById('calendar-grid');
@@ -445,6 +560,10 @@ function renderCalendar() {
   const exceptions = window.bookingState.scheduleExceptions || [];
   const selectedBarber = window.bookingState.selectedBarber;
 
+  // Estado actual de fecha seleccionada
+  const selectedDateState = window.bookingState?.selectedDate ?? window.selectedDate;
+  const selectedDateIsoState = window.bookingState?.selectedDateIso;
+
   for (let d = 1; d <= daysInMonth; d++) {
     const currentDate = new Date(year, month, d);
     currentDate.setHours(0, 0, 0, 0);
@@ -480,8 +599,27 @@ function renderCalendar() {
     });
 
     const isClosed = isPast || isTooFar || !isOpenDay || isExceptionClosed;
-    const isSelected = window.bookingState.selectedDateIso === dateIso;
     const labelDateText = `${dayName}, ${d} de ${MONTH_NAMES[month]} de ${year}`;
+
+    // Comparar fecha de la celda con la variable de estado actual (selectedDate / selectedDateIso)
+    const isSelected = isDateMatchingSelection(
+      dateIso,
+      d,
+      month,
+      year,
+      labelDateText,
+      selectedDateIsoState,
+      selectedDateState
+    );
+
+    if (isSelected) {
+      if (!window.bookingState.selectedDateIso) {
+        window.bookingState.selectedDateIso = dateIso;
+      }
+      if (!window.bookingState.selectedDate) {
+        window.bookingState.selectedDate = labelDateText;
+      }
+    }
 
     if (isClosed) {
       html += `
@@ -491,14 +629,15 @@ function renderCalendar() {
         </div>
       `;
     } else if (isSelected) {
+      // Si la fecha del día coincide con selectedDate, agregar obligatoriamente las clases CSS de selección ('selected', 'active', 'active-date')
       html += `
-        <button class="cal-day active-date p-2 sm:p-3 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md font-bold shadow-[0_0_18px_#facc15] scale-105 transition-all" data-date-iso="${dateIso}" data-date-label="${labelDateText}" type="button">
+        <button class="cal-day active-date selected active p-2 sm:p-3 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md font-bold shadow-[0_0_18px_#facc15] scale-105 transition-all" data-date-iso="${dateIso}" data-date-label="${labelDateText}" type="button" aria-selected="true">
           ${d}
         </button>
       `;
     } else {
       html += `
-        <button class="cal-day p-2 sm:p-3 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors" data-date-iso="${dateIso}" data-date-label="${labelDateText}" type="button">
+        <button class="cal-day p-2 sm:p-3 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors" data-date-iso="${dateIso}" data-date-label="${labelDateText}" type="button" aria-selected="false">
           ${d}
         </button>
       `;
@@ -598,6 +737,9 @@ async function renderTimeSlots() {
   }
 
   stage.innerHTML = html;
+
+  // Asegurar que el día seleccionado en el calendario mantenga su clase visual activa tras cargar los slots
+  ensureCalendarDayVisualSelection();
 
   stage.querySelectorAll('button[data-slot-start]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -771,9 +913,9 @@ window.selectProfessional = function(workerOrElement, name, role, idOrSlug) {
 window.selectDate = function(element, dateLabelText) {
   let dateIso = element && element.getAttribute ? element.getAttribute('data-date-iso') : null;
   if (!dateIso) {
-    const today = new Date();
-    const year = today.getFullYear();
-    const monthStr = String(today.getMonth() + 1).padStart(2, '0');
+    const viewDate = window.bookingState.currentCalendarViewDate || new Date();
+    const year = viewDate.getFullYear();
+    const monthStr = String(viewDate.getMonth() + 1).padStart(2, '0');
     const dayMatch = dateLabelText ? dateLabelText.match(/\d+/) : null;
     const dayStr = dayMatch ? String(dayMatch[0]).padStart(2, '0') : '01';
     dateIso = `${year}-${monthStr}-${dayStr}`;
@@ -790,6 +932,7 @@ window.selectTime = function(element, timeLabel) {
 window.selectDateIso = function(dateIso, dateLabelText, btnElement) {
   window.bookingState.selectedDateIso = dateIso;
   window.bookingState.selectedDate = dateLabelText;
+  window.selectedDate = dateLabelText;
 
   window.bookingState.selectedTime = null;
   window.bookingState.selectedTimeStart = null;
@@ -1037,6 +1180,7 @@ window.renderWorkers = renderWorkers;
 window.renderCalendar = renderCalendar;
 window.renderTimeSlots = renderTimeSlots;
 window.updateSummaryDetails = updateSummaryDetails;
+window.ensureCalendarDayVisualSelection = ensureCalendarDayVisualSelection;
 
 // ==============================================================================
 // 6. NAVEGACIÓN ENTRE PASOS Y RESUMEN
@@ -1376,6 +1520,20 @@ async function initBookingData() {
   // Configurar delegación de eventos y sincronización de datos de formulario
   setupEventDelegation();
   setupClientInputsSync();
+
+  // Si existe una fecha premarcada en el HTML inicial, conservarla en el estado
+  if (!window.bookingState.selectedDate && !window.bookingState.selectedDateIso) {
+    const existingActiveBtn = document.querySelector('#calendar-grid .active-date, #calendar-grid .selected, #calendar-grid .active');
+    const displayElem = document.getElementById('selected-date-display');
+    const initialLabel = existingActiveBtn?.getAttribute('data-date-label') || displayElem?.innerText?.trim();
+    const initialIso = existingActiveBtn?.getAttribute('data-date-iso');
+    if (initialLabel && initialLabel !== 'Fecha sin seleccionar') {
+      window.bookingState.selectedDate = initialLabel;
+      if (initialIso) {
+        window.bookingState.selectedDateIso = initialIso;
+      }
+    }
+  }
 
   // Renderizar inmediatamente la interfaz con los datos iniciales (0ms latency)
   renderServices();
